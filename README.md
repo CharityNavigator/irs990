@@ -21,7 +21,7 @@ The AWS dataset contains both 990 and 990-EZ filings. As of v0.1.0, the toolkit 
 
 ### Exploring the schema
 
-If you're just getting started with the AWS 990 dataset, you may wish to explore the structure of the data. We are building a tool for visualizing and exploring the dataset at a high level. The tool is currently being built from the ground up. If you are interested in a preview of the visualization tool, please [mailto:dborenstein@charitynavigator.org] contact us.
+If you're just getting started with the AWS 990 dataset, you may wish to explore the structure of the data. We are building a tool for visualizing and exploring the dataset at a high level. The tool is currently being built from the ground up. If you are interested in a preview of the visualization tool, please [contact us](mailto:dborenstein@charitynavigator.org).
 
 ## Notice
 
