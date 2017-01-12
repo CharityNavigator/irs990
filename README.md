@@ -14,7 +14,7 @@ The AWS dataset contains both 990 and 990-EZ filings. As of v0.1.0, the toolkit 
 
 ## Getting started
 
-## Building a database
+### Building a database
 
  * The easiest, cheapest way to get started is to clone a copy of the IRS database from our S3 mirror. [Instructions](http://placeholder/)
  * If our files are out of date, or if you wish to customize your database, please follow our tutorial for building the database from scratch. [Instructions](http://placeholder/)
@@ -22,6 +22,8 @@ The AWS dataset contains both 990 and 990-EZ filings. As of v0.1.0, the toolkit 
 ### Exploring the schema
 
 If you're just getting started with the AWS 990 dataset, you may wish to explore the structure of the data. We are building a tool for visualizing and exploring the dataset at a high level. The tool is currently being built from the ground up. If you are interested in a preview of the visualization tool, please [mailto:dborenstein@charitynavigator.org] contact us.
+
+## Notice
 
 *Copyright (c) 2017 Charity Navigator.*
 
