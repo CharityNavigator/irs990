@@ -25,7 +25,7 @@ We have packaged up an image of our database for your convenience and safety. **
   1. Select MySQL engine
   1. Choose an m4.xlarge instance and provision 30gb of storage
   1. Under "advanced settings," leave all blank
-1. Enable inbound traffic from SSH (for terminal) and HTTPS (for Github) on EMR master node
+1. Enable inbound traffic from SSH (for terminal) and a couple other things (for Github) on EMR master node
   1. Go to EMR console on AWS
   1. Click "cluster list"
   1. Go to the cluster you made and click "view cluster details"
@@ -34,7 +34,7 @@ We have packaged up an image of our database for your convenience and safety. **
   1. On the bottom of the screen, navigate to the "Inbound" tab.
   1. Click "Edit."
   1. Click "Add rule." Where it says "Custom TCP rule," click the drop down and choose "SSH." Where it says "Custom," click the drop down and choose "Anywhere."
-  1. Click "Add rule" again. Do as above, but this time choose "HTTPS."
+  1. Create additional rules allowing inbound traffic for ports 443, 9418, and 80 from 192.30.252.0/22 (Github).
 1. Enable communication between your RDS instance and your EMR instance
   1. Basically, you want to follow [these steps](https://aws.amazon.com/premiumsupport/knowledge-center/rds-cannot-connect/). You want your RDS to allow inbound traffic over port 3306 from members of either the EMR master or slave security groups. 
 1. Connect to your EMR instance
