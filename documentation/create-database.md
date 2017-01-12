@@ -35,14 +35,16 @@ We have packaged up an image of our database for your convenience and safety. **
   1. Click "Edit."
   1. Click "Add rule." Where it says "Custom TCP rule," click the drop down and choose "SSH." Where it says "Custom," click the drop down and choose "Anywhere."
   1. Click "Add rule" again. Do as above, but this time choose "HTTPS."
-1. Connect to your RDS instance
+1. Enable communication between your RDS instance and your EMR instance
+  1. Basically, you want to follow [these steps](https://aws.amazon.com/premiumsupport/knowledge-center/rds-cannot-connect/). You want your RDS to allow inbound traffic over port 3306 from members of either the EMR master or slave security groups. 
+1. Connect to your EMR instance
   1. Go to the EC2 console
   1. Click on the instances you have running until you see the one whose security group is called `ElasticMapReduce-master`. Copy the Public IP address into your clipboard.
   1. From Linux or Mac, type `ssh -i my-ec2-key.pem hadoop@1.2.3.4`, where `my-ec2-key.pem` is the EC2 key you created and downloaded earlier, and `1.2.3.4` is the IP address of your master node. (Note to self: provide a link to Windows instructions -DBB)
   1. Acknowledge and accept the security warning, if any.
 1. Verify that you configured everything correctly,
   1. Verify that you chose the right kind of EMR cluster by typing `spark-submit --help` and pressing enter. If you get an error, terminate the EMR cluster and make a new one with the right configuration. (See above.)
-  1. Verify that you can connect to your RDS instance.
+  1. Verify that you can connect to your RDS instance. Go to the RDS console, click on the RDS instance you created for this project, and copy the endpoint (except the `:3306` at the end) to your clipboard. Type `mysql -h my-endpoint-name -P 3306 -u my-root-name -p`, where `my-endpoint-name` is what's on your clipboard and `my-root-name` is the name of the root user you created for the database. Type your root password. If you get right to a MySQL prompt, you did everything correctly. If it hangs for a long time and then times out, your security groups are still messed up. 
 1. Initialize your environment to build the database
   1. Type `sudo yum install git` and wait for git to install.
   1. Clone this repository from github by typing `git clone https://github.org/CharityNavigator/irs990` 
