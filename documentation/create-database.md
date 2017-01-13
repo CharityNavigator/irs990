@@ -2,6 +2,10 @@
 
 We have packaged up an image of our database for your convenience and safety. **You probably don't need to build one from scratch.** However, if you want to modify our database or build a newer one than the version that we have posted, we have provided step-by-step instructions for doing so below.
 
+## Why you might need these steps
+
+If you want to add new fields to the database or build a newer one than the version that we have posted, you will need these steps.
+
 ## Warning
 
 **The following steps involve creating several virtual computers in the cloud. Every single one of them will be billed by the hour until you shut them off. They will also be vulnerable to hacking unless you take additional steps to secure them. Please only do this if you know what you're doing.**
@@ -25,7 +29,7 @@ We have packaged up an image of our database for your convenience and safety. **
   1. Select MySQL engine
   1. Choose an m4.xlarge instance and provision 30gb of storage
   1. Under "advanced settings," leave all blank
-1. Enable inbound traffic from SSH (for terminal) and HTTPS (for Github) on EMR master node
+1. Enable inbound traffic from SSH (for terminal) and a couple other things (for Github) on EMR master node
   1. Go to EMR console on AWS
   1. Click "cluster list"
   1. Go to the cluster you made and click "view cluster details"
@@ -34,9 +38,11 @@ We have packaged up an image of our database for your convenience and safety. **
   1. On the bottom of the screen, navigate to the "Inbound" tab.
   1. Click "Edit."
   1. Click "Add rule." Where it says "Custom TCP rule," click the drop down and choose "SSH." Where it says "Custom," click the drop down and choose "Anywhere."
-  1. Click "Add rule" again. Do as above, but this time choose "HTTPS."
+  1. Create additional rules allowing inbound traffic for ports 443, 9418, and 80 from 192.30.252.0/22 (Github).
 1. Enable communication between your RDS instance and your EMR instance
   1. Basically, you want to follow [these steps](https://aws.amazon.com/premiumsupport/knowledge-center/rds-cannot-connect/). You want your RDS to allow inbound traffic over port 3306 from members of either the EMR master or slave security groups. 
+1. Create an IAM access key
+  1. Downloading from S3 costs money. Not much, but to do it, you have to authenticate as yourself. When doing this programatically, we use random sequences of characters called keys. Follow [these instructions](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html) to create a key. Be sure to write down your secret code, as you will never be able to view it again.
 1. Connect to your EMR instance
   1. Go to the EC2 console
   1. Click on the instances you have running until you see the one whose security group is called `ElasticMapReduce-master`. Copy the Public IP address into your clipboard.
@@ -47,7 +53,10 @@ We have packaged up an image of our database for your convenience and safety. **
   1. Verify that you can connect to your RDS instance. Go to the RDS console, click on the RDS instance you created for this project, and copy the endpoint (except the `:3306` at the end) to your clipboard. Type `mysql -h my-endpoint-name -P 3306 -u my-root-name -p`, where `my-endpoint-name` is what's on your clipboard and `my-root-name` is the name of the root user you created for the database. Type your root password. If you get right to a MySQL prompt, you did everything correctly. If it hangs for a long time and then times out, your security groups are still messed up. 
 1. Initialize your environment to build the database
   1. Type `sudo yum install git` and wait for git to install.
+  1. Type `sudo pip install sqlalchemy` and wait for SQLAlchemy to install.
   1. Clone this repository from github by typing `git clone https://github.org/CharityNavigator/irs990` 
+  1. Type `echo export PYTHONPATH=\"/home/hadoop/irs990\" >> .bash_profile`.
+  1. Create a `.boto` file with your access key and secret key
   
 ## Notice
 
