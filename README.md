@@ -1,4 +1,4 @@
-# IRS 990 Toolkit v0.1.0
+# IRS 990 Toolkit (UNDER DEVELOPMENT)
 
 This repository contains tools and instructions for exploring the IRS 990 dataset [hosted by Amazon Web Services on S3](https://aws.amazon.com/public-datasets/irs-990/), offered free to the public by [Charity Navigator](https://www.charitynavigator.org/).
 
