@@ -67,6 +67,7 @@ If you want to add new fields to the database or build a newer one than the vers
   1. Once you shut down your EMR cluster, you will no longer have any way of logging into your database (if you followed the steps above). Modify the security group for your RDS to allow traffic from another, less expensive, computer.
 1. Use your database, or dump it to .sql, then shut it down
   1. Your SQL instance will continue to incur costs until you shut it down.
+  
 ## Notice
 
 *Copyright 2017 Charity Navigator.*
