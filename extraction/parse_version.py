@@ -18,36 +18,41 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from schema import *
-import os
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-import csv
+import sys
+from pyspark import SparkContext
+from lxml import etree
+from schema.xml import RawXML
+from schema.base import Credentials
 
-cred = base.Credentials()
-engineStr = cred.getEngineStr()
-engine = create_engine(engineStr)
+cred = Credentials()
 
-fn = "data/990_multi_stems.csv"
+def makeSession():
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    engineStr = cred.getEngineStr()
+    engine = create_engine(engineStr)
+    Session = sessionmaker()
+    Session.configure(bind=engine)
+    session = Session()
+    return session
 
-Session = sessionmaker()
-Session.configure(bind=engine)
-session = Session()
+session = makeSession()
 
-with open(fn, "rb") as fh:
-    reader = csv.reader(fh)
-    reader.next()
-
-    for line in reader:
-        table, version, field, path = line 
-        c = stem.Stem()
-        c.FormType="990"
-        c.tbl=table
-        c.field=field
-        c.version=version
-        c.path=path
-
-        session.add(c)
+def addVersions(records):
+    session = makeSession()
+    for row in records:
+        curId = row[0]
+        elem = session.query(RawXML).get(curId)
+        root = etree.fromstring(elem.XML)
+        elem.Version = root.attrib["returnVersion"]
+        session.add(elem)
         session.commit()
+
+sc = SparkContext()
+records = session.query(RawXML.id, RawXML.Version)\
+        .filter(RawXML.Version == None)
+
 session.close()
+
+sc.parallelize(records)\
+        .foreachPartition(addVersions)

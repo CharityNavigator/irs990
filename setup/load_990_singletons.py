@@ -25,8 +25,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import csv
 
-os.chdir("/home/dbborens/990/")
-
 cred = base.Credentials()
 engineStr = cred.getEngineStr()
 engine = create_engine(engineStr)

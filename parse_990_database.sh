@@ -20,16 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 # THE SOFTWARE.
 
-echo "***Initializing database."
-mysql -h $1 -P 3306 -u $2 -p$3 < ./sql/setup_db.sql
-echo "***Creating database tables (except XML table)."
-python ./setup/create_db.py $1 $2 $3
-echo "***Creating XML table."
-mysql -h $1 -P 3306 -u $2 -p$3 < ./sql/create_xml_table.sql
-echo "***Loading 990 schema crosswalk for stand-alone fields."
-python ./setup/load_990_singletons.py $1 $2 $3
-echo "***Loading 990 root crosswalk for field groups."
-python ./setup/load_990_roots.py $1 $2 $3
-echo "***Loading 990 stem crosswalk for fields in field groups."
-python ./setup/load_990_stems.py $1 $2 $3
-echo "***Done."
+#echo "***Populating XML version field."
+#spark-submit ./extraction/parse_version.py $1 $2 $3
+echo "***Populating 990 bodies."
+spark-submit ./extraction/parse_body.py $1 $2 $3
