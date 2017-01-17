@@ -10,6 +10,12 @@ If you want to add new fields to the database or build a newer one than the vers
 
 **The following steps involve creating several virtual computers in the cloud. Every single one of them will be billed by the hour until you shut them off. They will need to run for longer, increasing the total cost of the project. Most importantly, they will be vulnerable to hacking unless you take additional steps to secure them. Please only do this if you know what you're doing.**
 
+## Apology for bad code
+
+This project was my first foray into Spark, and my first non-trivial projet in Amazon Web Services. I suspect that I will look back on it with a fair bit of embarassment. That said,, I agree with [David Robinson and Hadley Wickham](http://varianceexplained.org/programming/bad-code/) about the importance of using and owning bad code as a step towards good code, and so I have open-sourced it anyway.
+
+I used Spark here for two reasons: first, it provided cheap parallelism; and second, it provided an expandable platform for much more complicated analyses. I recognize that my use of Spark could be much richer and more efficient than it is.
+
 ## Instructions
 
 1. Log into AWS
