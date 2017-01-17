@@ -22,12 +22,12 @@ from pyspark import SparkContext
 from datetime import datetime
 import os
 import json
-from schema import *
+from schema.base import Credentials
+from schema.filing import Filing, RawXML
 import boto
 from boto.s3.key import Key
-from schema.base import Credentials
 
-cred = base.Credentials()
+cred = Credentials()
 
 def makeSession():
     from sqlalchemy import create_engine
@@ -75,7 +75,7 @@ def loadIndex(years):
         index = json.loads(index_json)
         records = index["Filings%i" % year]
         for record in records:
-            f = filing.Filing()
+            f = Filing()
             f.OrganizationName = get_na(record, "OrganizationName")
             f.ObjectId         = get_na(record, "ObjectId")
             f.SubmittedOn      = submittedOn(get_na(record, "SubmittedOn"))

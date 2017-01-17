@@ -1,6 +1,5 @@
 __all__ = ["base", 
            "filing", 
-           "xml", 
            "g1", 
            "header", 
            "i", 

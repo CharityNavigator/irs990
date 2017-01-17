@@ -40,3 +40,20 @@ class Filing(Base):
     IsAvailable      = db.Column(m.BIT)
 
     raw = relationship("RawXML", back_populates="filing")
+
+class RawXML(Base):
+    __tablename__ = "xml"
+
+    id = db.Column(db.Integer, primary_key=True)
+    FilingId = db.Column(db.Integer, db.ForeignKey('filing.id', ondelete="CASCADE", onupdate="CASCADE"), unique=True)
+    XML = db.Column(m.LONGTEXT)
+    Version = db.Column(db.String(20))
+    FormType = db.Column(db.String(5))
+
+    filing = relationship("Filing", back_populates="raw")
+
+    def __init__(self, xmlStr, filing, version = None, formType = None):
+        self.filing = filing
+        self.XML    = xmlStr
+        self.Version = version
+        self.FormType = formType

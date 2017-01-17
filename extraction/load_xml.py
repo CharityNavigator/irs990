@@ -23,8 +23,7 @@ import boto
 from boto.s3.key import Key
 import time
 from schema.base import Credentials
-from schema.xml import RawXML
-from schema.filing import Filing
+from schema.filing import Filing, RawXML
 import sys
 
 def key_to_str(bucket, key):

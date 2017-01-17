@@ -20,8 +20,7 @@
 
 import sys
 from lxml import etree
-from schema.xml import RawXML
-from schema.filing import Filing
+from schema.filing import Filing, RawXML
 from schema.lookup.single import SingletonLookup
 from schema.lookup.multi import MultiLookup 
 from schema.base import Credentials
