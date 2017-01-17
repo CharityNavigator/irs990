@@ -8,7 +8,7 @@ If you want to add new fields to the database or build a newer one than the vers
 
 ## Warning
 
-**The following steps involve creating several virtual computers in the cloud. Every single one of them will be billed by the hour until you shut them off. They will also be vulnerable to hacking unless you take additional steps to secure them. Please only do this if you know what you're doing.**
+**The following steps involve creating several virtual computers in the cloud. Every single one of them will be billed by the hour until you shut them off. They will need to run for longer, increasing the total cost of the project. Most importantly, they will be vulnerable to hacking unless you take additional steps to secure them. Please only do this if you know what you're doing.**
 
 ## Instructions
 
@@ -56,8 +56,17 @@ If you want to add new fields to the database or build a newer one than the vers
   1. Type `sudo pip install sqlalchemy` and wait for SQLAlchemy to install.
   1. Clone this repository from github by typing `git clone https://github.org/CharityNavigator/irs990` 
   1. Type `echo export PYTHONPATH=\"/home/hadoop/irs990\" >> .bash_profile`.
-  1. Create a `.boto` file with your access key and secret key
-  
+  1. Create a `.boto` file with your access key and secret key (Note to self: provide instructions on how to do this)
+1. Run the code
+  1. Run 'cd irs990`.
+  1. Run `sh create_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will _configure_ the database.
+  1. Run `sh load_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will download data from S3.
+  1. Run `sh load_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will _populate_ the database.  
+1. Shut down your EMR cluster immediately
+  1. The EMR cluster is now no longer needed and is running up a hefty bill. Shut it down immediately unless you have plans that involve it.
+  1. Once you shut down your EMR cluster, you will no longer have any way of logging into your database (if you followed the steps above). Modify the security group for your RDS to allow traffic from another, less expensive, computer.
+1. Use your database, or dump it to .sql, then shut it down
+  1. Your SQL instance will continue to incur costs until you shut it down.
 ## Notice
 
 *Copyright 2017 Charity Navigator.*
