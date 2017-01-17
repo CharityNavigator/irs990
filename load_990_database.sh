@@ -21,7 +21,7 @@
 # THE SOFTWARE.
 
 echo "***Loading index."
-python ./setup/load_index.py $1 $2 $3
+spark-submit ./setup/load_index.py $1 $2 $3
 echo "***Loading XML."
-spark-submit ./extraction/load_xml.py $1 $2 $3
-echo "***Done."
+#spark-submit ./extraction/load_xml.py $1 $2 $3
+#echo "***Done."

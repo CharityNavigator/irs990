@@ -18,19 +18,26 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+from pyspark import SparkContext
 from datetime import datetime
 import os
 import json
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
 from schema import *
 import boto
 from boto.s3.key import Key
+from schema.base import Credentials
 
 cred = base.Credentials()
-engineStr = cred.getEngineStr()
-engine = create_engine(engineStr)
+
+def makeSession():
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    engineStr = cred.getEngineStr()
+    engine = create_engine(engineStr)
+    Session = sessionmaker()
+    Session.configure(bind=engine)
+    session = Session()
+    return session
 
 def key_to_str(bucket, key):
     #start = time.time()
@@ -56,39 +63,36 @@ def lastUpdated(raw):
     raw = raw.split(".")[0]
     return datetime.strptime(raw, "%Y-%m-%dT%H:%M:%S")
 
-Session = sessionmaker()
-Session.configure(bind=engine)
-session = Session()
+sc = SparkContext()
 
-print "Connecting to S3."
-s3 = boto.connect_s3(host="s3.amazonaws.com")
-print "Getting 990 bucket."
-bucket = s3.get_bucket("irs-form-990")
+def loadIndex(years):
+    session = makeSession()
+    s3 = boto.connect_s3(host="s3.amazonaws.com")
+    bucket = s3.get_bucket("irs-form-990")
+    for year in years:
+        key = "index_%i.json" % (year)
+        index_json = key_to_str(bucket, key)
+        index = json.loads(index_json)
+        records = index["Filings%i" % year]
+        for record in records:
+            f = filing.Filing()
+            f.OrganizationName = get_na(record, "OrganizationName")
+            f.ObjectId         = get_na(record, "ObjectId")
+            f.SubmittedOn      = submittedOn(get_na(record, "SubmittedOn"))
+            f.DLN              = get_na(record, "DLN")
+            f.LastUpdated      = lastUpdated(get_na(record, "LastUpdated"))
+            f.TaxPeriod        = taxPeriod(get_na(record, "TaxPeriod"))
+            f.IsElectronic     = get_na(record, "IsElectronic")
+            f.IsAvailable      = get_na(record, "IsAvailable")
+            f.FormType         = get_na(record, "FormType")
+            f.EIN              = get_na(record, "EIN")
+            f.URL              = get_na(record, "URL")
 
-for year in range(2011, datetime.now().year):
-    print("Processing year %i." % year)
-    print("  ...retrieving JSON index from Amazon S3.")
-    key = "index_%i.json" % (year)
-    index_json = key_to_str(bucket, key)
-    index = json.loads(index_json)
-    print("  ...Decoding JSON index.")
-    records = index["Filings%i" % year]
-    print("  ...Loading index into database.")
-    for record in records:
-        f = filing.Filing()
-        f.OrganizationName = get_na(record, "OrganizationName")
-        f.ObjectId         = get_na(record, "ObjectId")
-        f.SubmittedOn      = submittedOn(get_na(record, "SubmittedOn"))
-        f.DLN              = get_na(record, "DLN")
-        f.LastUpdated      = lastUpdated(get_na(record, "LastUpdated"))
-        f.TaxPeriod        = taxPeriod(get_na(record, "TaxPeriod"))
-        f.IsElectronic     = get_na(record, "IsElectronic")
-        f.IsAvailable      = get_na(record, "IsAvailable")
-        f.FormType         = get_na(record, "FormType")
-        f.EIN              = get_na(record, "EIN")
-        f.URL              = get_na(record, "URL")
+            session.add(f)
+            session.commit()
 
-        session.add(f)
-        session.commit()
+    session.close()
 
-session.close()
+years = range(2011, datetime.now().year)
+sc.parallelize(years)\
+        .foreachPartition(loadIndex)

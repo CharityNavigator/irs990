@@ -27,11 +27,6 @@ from schema.xml import RawXML
 from schema.filing import Filing
 import sys
 
-# Many thanks:
-# 
-#  http://tech.adroll.com/blog/spark/2016/01/25/spark-on-emr.html
-#  http://stackoverflow.com/questions/26828987/why-is-this-simple-spark-program-not-utlizing-multiple-cores
-
 def key_to_str(bucket, key):
     start = time.time()
     ret = bucket.get_key(key) \
