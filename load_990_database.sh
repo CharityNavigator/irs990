@@ -20,8 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 # THE SOFTWARE.
 
-#echo "***Loading index."
-#spark-submit ./setup/load_index.py $1 $2 $3
+echo "***Loading index."
+spark-submit ./setup/load_index.py $1 $2 $3
 echo "***Loading XML."
 spark-submit ./extraction/load_xml.py $1 $2 $3
 echo "***Done."

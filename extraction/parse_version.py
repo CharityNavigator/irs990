@@ -21,7 +21,7 @@
 import sys
 from pyspark import SparkContext
 from lxml import etree
-from schema.xml import RawXML
+from schema.filing import RawXML
 from schema.base import Credentials
 
 cred = Credentials()

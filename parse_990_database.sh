@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 # THE SOFTWARE.
 
-#echo "***Populating XML version field."
-#spark-submit ./extraction/parse_version.py $1 $2 $3
+echo "***Populating XML version field."
+spark-submit ./extraction/parse_version.py $1 $2 $3
 echo "***Populating 990 bodies."
 spark-submit ./extraction/parse_body.py $1 $2 $3
