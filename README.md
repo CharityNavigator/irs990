@@ -24,7 +24,7 @@ This toolkit encompasses several offerings, along with documentation about how t
 
 ## Who should use this toolkit
 
-These tools were prepared for researchers, data scientists, and enthusiasts interested in exploring the IRS 990 database. These tools are partial and preliminary, but they can help get you over the hump if you've been stuck on this difficult-to-use dataset. You should **not** use this dataset as-is for legal investigations, policy decisions, or published findings without some scrutiny and careful cleaning. If you do polish things up, please consider contributing to this repository.
+These tools were prepared for researchers, data scientists, and enthusiasts interested in exploring the IRS 990 database. These tools are partial and preliminary, but they can help get you over the hump if you've been stuck on this difficult-to-use dataset. You should **not** use this dataset for legal investigations, policy decisions, or published findings without some scrutiny and careful cleaning. If you do polish things up, please consider contributing to this repository.
 
 ## Prerequisites
 
