@@ -1,16 +1,38 @@
 # IRS 990 Toolkit (UNDER DEVELOPMENT)
 
-This repository contains tools and instructions for exploring the IRS 990 dataset [hosted by Amazon Web Services on S3](https://aws.amazon.com/public-datasets/irs-990/), offered free to the public by [Charity Navigator](https://www.charitynavigator.org/).
+This repository contains everything you need to get started exploring the IRS 990 dataset [hosted by Amazon Web Services on S3](https://aws.amazon.com/public-datasets/irs-990/). This includes instructions for an easier-to-use 990 database provided free to the public by [Charity Navigator](https://www.charitynavigator.org/).
 
-The IRS 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
+## Why we are providing these files
+
+Charity Navigator is dedicated to the advancement of informed and intelligent giving. The IRS 990 is a crucial public record of nonprofit governance, but the original electronic records are very hard to work with.
+
+The original 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
+
+This toolkit is neither perfect nor comprehensive, but we hope it can be a starting point for data scientists and subject area experts looking to explore public records for the charitable sector.
+
+## What is available here:
+
+This toolkit encompasses several offerings, along with documentation about how to use each one.
+
+* **A small database capturing selected fields from the IRS 990 from tax years 2011 to 2014.** The fields chosen are those most helpful to Charity Navigator. You may find them helpful as well. [Click for more info.](http://placeholder.com)
+
+* **A large database capturing the above fields, plus all of the raw 990 data in an indexed and searchable form.** The 990 data provided by the IRS can be slow to search,  download and retrieve. This database is designed to provide the raw data in a more easily searchable form. By associating the raw data with pre-digested fields, it is possible to do selective data pulls on specific criteria.  [Click for more info.](http://placeholder.com)
+
+* **(ADVANCED USERS ONLY) Code and instructions for rebuilding the above databases.** All of the code used to build this database is available in this repository. If you wish to add additional fields to the database provided here, or if you wish to build our logic into your application, use this logic. Note that this is expensive and depends on Apache Spark. You should do it only if you know what you're doing!  [Click for more info.](http://placeholder.com)
+
+* **Preliminary views into the data.** We have provided several visualizations of the data, along with the R code used to generate it.  [Click for more info.](http://placeholder.com)
 
 ## Prerequisites
 
-At the moment, these tools assume that you have at least a passing familiarity with Amazon Web Services and the Linux command line. Also, you must be willing to spend several dollars (or more) to set up your database. The software we are providing is free; Amazon Web Services is not.
+These tools assume that you are comfortable working with SQL databases, and have at least a passing familiarity with Amazon Web Services and the Linux command line. Also, you must be willing to spend a modest amount of money to set up a copy of the smallest database, plus hourly hosting fees; expect to spend more on the large database or to build from scratch. The software we are providing is free; Amazon Web Services is not.
 
 ## Limitations
 
-The AWS dataset contains both 990 and 990-EZ filings. As of v0.1.0, the toolkit only provides support for 990 filings. Also, note that there may be flaws, mistakes, and bugs in our database. If you find something wrong, please [report an issue](https://github.com/CharityNavigator/irs990/issues).
+The following limitations apply as of the latest version we are hosting.
+
+* **990 data only.** The AWS dataset contains both 990 and 990-EZ filings. As of this version, the toolkit only provides support for 990 filings. 
+* **No 2015 data.** The AWS dataset contains data from 2011 through 2015. As of this fersion, the toolkit only provides support for filings through 2015.
+* **As with all complex datasets, there will be flaws, mistakes, and bugs in our database.** Some of these are already known. See the [issues page](https://github.com/CharityNavigator/irs990/issues) for known bugs. If you find something wrong, please [report an issue](https://github.com/CharityNavigator/irs990/issues).
 
 ## Getting started
 
