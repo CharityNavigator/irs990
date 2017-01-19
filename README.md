@@ -31,7 +31,7 @@ These tools assume that you are comfortable working with SQL databases, and have
 The following limitations apply as of the latest version we are hosting.
 
 * **990 data only.** The AWS dataset contains both 990 and 990-EZ filings. As of this version, the toolkit only provides support for 990 filings. 
-* **No 2015 data.** The AWS dataset contains data from 2011 through 2015. As of this fersion, the toolkit only provides support for filings through 2015.
+* **No 2015 data.** The AWS dataset contains data from 2011 through 2015. As of this version, the toolkit only provides support for filings through 2015.
 * **As with all complex datasets, there will be flaws, mistakes, and bugs in our database.** Some of these are already known. See the [issues page](https://github.com/CharityNavigator/irs990/issues) for known bugs. If you find something wrong, please [report an issue](https://github.com/CharityNavigator/irs990/issues).
 
 ## Getting started
