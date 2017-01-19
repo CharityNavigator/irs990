@@ -14,13 +14,15 @@ This toolkit is neither perfect nor comprehensive, but we hope it can be a start
 
 This toolkit encompasses several offerings, along with documentation about how to use each one.
 
-* **A small database capturing selected fields from the IRS 990 from tax years 2011 to 2014.** The fields chosen are those most helpful to Charity Navigator. You may find them helpful as well. [Click for more info.](http://placeholder.com)
+* **A small database capturing selected fields from the IRS 990 from tax years 2011 to 2014.** The fields chosen are those most helpful to Charity Navigator. You may find them helpful as well. [[Click for more info.]](https://github.com/CharityNavigator/irs990/blob/master/docs/clone_database.md)
 
-* **A large database capturing the above fields, plus all of the raw 990 data in an indexed and searchable form.** The 990 data provided by the IRS can be slow to search,  download and retrieve. This database is designed to provide the raw data in a more easily searchable form. By associating the raw data with pre-digested fields, it is possible to do selective data pulls on specific criteria.  [Click for more info.](http://placeholder.com)
+* **A large database capturing the above fields, plus all of the raw 990 data in an indexed and searchable form.** The 990 data provided by the IRS can be slow to search,  download and retrieve. This database is designed to provide the raw data in a more easily searchable form. By associating the raw data with pre-digested fields, it is possible to do selective data pulls on specific criteria.  [[Click for more info.]](https://github.com/CharityNavigator/irs990/blob/master/docs/clone_database.md)
 
-* **(ADVANCED USERS ONLY) Code and instructions for rebuilding the above databases.** All of the code used to build this database is available in this repository. If you wish to add additional fields to the database provided here, or if you wish to build our logic into your application, use this logic. Note that this is expensive and depends on Apache Spark. You should do it only if you know what you're doing!  [Click for more info.](http://placeholder.com)
+* **Preliminary views into the data.** We have provided several visualizations of the data, along with the R code used to generate it.  [Click for more info.](https://github.com/CharityNavigator/irs990/blob/master/docs/explore-database.md)
 
-* **Preliminary views into the data.** We have provided several visualizations of the data, along with the R code used to generate it.  [Click for more info.](http://placeholder.com)
+* **(ADVANCED USERS ONLY) Code and instructions for rebuilding the above databases.** All of the code used to build this database is available in this repository. If you wish to add additional fields to the database provided here, or if you wish to build our logic into your application, use this logic. Note that this is expensive and depends on Apache Spark. You should do it only if you know what you're doing!  [Click for more info.](https://github.com/CharityNavigator/irs990/blob/master/docs/create-database.md)
+
+* **(ADVANCED USERS ONLY) Discussion of how to add to this database.** These tools are written in Python and depend on Apache Spark. They should be readily extensible for those with the appropriate skills. [Click for more info.](https://github.com/CharityNavigator/irs990/blob/master/docs/extend-database.md)
 
 ## Who should use this toolkit
 
@@ -43,7 +45,7 @@ The following limitations apply as of the latest version we are hosting.
 ### Building a database
 
  * The easiest, cheapest way to get started is to clone a copy of the IRS database from our S3 mirror. [Instructions](https://github.com/CharityNavigator/irs990/blob/master/documentation/clone_database.md)
- * If our files are out of date, or if you wish to customize your database, please follow our tutorial for building the database from scratch. [Instructions](http://placeholder/)
+ * If our files are out of date, or if you wish to customize your database, please follow our tutorial for building the database from scratch. [Instructions](https://github.com/CharityNavigator/irs990/blob/master/docs/create-database.md)
 
 ### Exploring the schema
 
@@ -52,6 +54,7 @@ If you're just getting started with the AWS 990 dataset, you may wish to explore
 ## Authors
 
 Code, documentation, and visualizations: David Bruce Borenstein
+
 Crosswalk between XML and database columns: Vince Bogucki
 
 ## Notice
