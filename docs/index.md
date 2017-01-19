@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 tags: [990, irs, charity, nonprofit]
 ---
 
