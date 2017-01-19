@@ -22,6 +22,10 @@ This toolkit encompasses several offerings, along with documentation about how t
 
 * **Preliminary views into the data.** We have provided several visualizations of the data, along with the R code used to generate it.  [Click for more info.](http://placeholder.com)
 
+## Who should use this toolkit
+
+These tools were prepared for researchers, data scientists, and enthusiasts interested in exploring the IRS 990 database. These tools are partial and preliminary, but they can help get you over the hump if you've been stuck on this difficult-to-use dataset. You should **not** use this dataset as-is for legal investigations, policy decisions, or published findings without some scrutiny and careful cleaning. If you do polish things up, please consider contributing to this repository.
+
 ## Prerequisites
 
 These tools assume that you are comfortable working with SQL databases, and have at least a passing familiarity with Amazon Web Services and the Linux command line. Also, you must be willing to spend a modest amount of money to set up a copy of the smallest database, plus hourly hosting fees; expect to spend more on the large database or to build from scratch. The software we are providing is free; Amazon Web Services is not.
