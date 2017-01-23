@@ -26,33 +26,115 @@ The table `filing` is built from the index files directly from the IRS. It corre
 > 
 > These index files includes basic information about each filing, including the name of the filer, the Employer Identification Number (EIN) of the filer, the date of the filing, and unique identifier for the filing.
 
-* `id` An internal identifier for the filing (not the one assigned by the IRS).
+* `id` An internal, table-specific identifier. Corresponds to `FilingId` foreign key for all other tables. This number is totally arbitrary!
 * `EIN` The employer tax identification number for the organization whose filing it is.
 * `DLN` The document locator number from the IRS.
-* `ObjectID` 
-* `FormType`
-* `URL`
-* `OrganizationName`
-* `SubmittedOn`
-* `LastUpdated`
-* `TaxPeriod`
-* `IsElectronic`
+* `ObjectID` This appears to be the unique part of the URL for the XML file containing the tax record. In earlier data releases from the IRS, only some records have this field. In this release, however, all filings appear to have an `ObjectID`.
+* `FormType` Whether the filing is 990, 990EZ, or 990PF. 
+* `URL` The URL for the XML file containing the tax record.  In earlier data releases from the IRS, only some records have this field. In this release, however, all filings appear to have a `URL`.
+* `OrganizationName` The name of the organization that filed the 990.
+* `SubmittedOn` The date the filing was submitted.
+* `LastUpdated` It is not clear whether this refers to the date the organization last updated its filing, or the date the IRS last updated its record (or something else).
+* `TaxPeriod` [**Known issue**](https://github.com/CharityNavigator/irs990/issues/6) This should show the date that the tax period ends. It currently shows the correct month and year, but provides the first day of the month instead of the last.
+* `IsElectronic` In previous data releases from the IRS, this flag was used to indicate that the row corresponded to an e-filing. In the current version, all paper filings have been removed from the index, and `IsElectronic` is no longer supplied.
 
 ### Header
+
+* `id`
+* `FilingId`
+* `FilerEIN`
+* `TaxYr`
+* `Amended`
+* `FilerName1`
+* `FilerName2`
+* `PdBeginDt`
+* `PdEndDt`
+* `Org501c3`
+* `Org501cInd`
+* `Org501cType`
+* `Org4947a1`
+* `Org527Ind`
+* `FormYr`
 
 ### XML (large database only)
 
 ### Part I
 
+* `id`
+* `FilingId`
+* `VoteBodyCount`
+* `Revenue`
+* `Expenses`
+* `RevLessExp`
+
 ### Part III
+
+* `id`
+* `FilingId`
+* `Description`
+* `ExpenseAmt`
+* `GrantAmt`
+* `RevenueAmt`
 
 ### Part IV
 
+* `id`
+* `FilingId`
+* `CurExcess`
+* `PrevExcess`
+* `HasLoan`
+* `RelPersGrant`
+* `BusOrgMem`
+* `BusFamMem`
+* `BusOfficer`
+
 ### Part VI
 
-### Part VII
+* `id`
+* `FilingId`
+* `Diversion`
+* `HasMinutes`
+* `PrvForm990`
+* `COIPolicy`
+* `WBPolicy`
+* `DocRetPolicy`
+* `CeoCompProc`
+
+### Part VII(a).
+
+* `id`
+* `FilingId`
+* `PersonNm`
+* `TitleTxt`
+* `AvgHrs`
+* `AvgHrsRltd`
+* `TrustOrDir`
+* `Officer`
+* `KeyEmpl`
+* `HighComp`
+* `FmrOfficer`
+* `RptCmpOrg`
+* `RptCmpRltd`
+* `OtherComp`
 
 ### Part VIII
+
+* `id`
+* `FilingId`
+* `FedCmpsAmt`
+* `MemDuesAmt`
+* `FundrAmt`
+* `RelOrgAMt`
+* `GovGrntAmt`
+* `OtherCntAmt`
+* `NoncashAmt`
+* `TtlCntAmt`
+* `TtlPrgRevAmt`
+* `CntRptFndAmt`
+* `FndGrossAmt`
+* `FndDirExpAmt`
+* `TtlFndRvAmt`
+* `TtlRevAmt`
 
 ### Part IX
 
