@@ -52,6 +52,10 @@ The following limitations apply as of the latest version we are hosting.
 
 If you're just getting started with the AWS 990 dataset, you may wish to explore the structure of the data. We are building a tool for visualizing and exploring the dataset at a high level. The tool is currently being built from the ground up. If you are interested in a preview of the visualization tool, please [contact us](mailto:dborenstein@charitynavigator.org).
 
+### Change log
+
+After the initial release, check here for updates about changes to the database.
+
 ## Authors
 
 Code, documentation, and visualizations: David Bruce Borenstein
