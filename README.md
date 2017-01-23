@@ -36,6 +36,7 @@ These tools assume that you are comfortable working with SQL databases, and have
 
 The following limitations apply as of the latest version we are hosting.
 
+* **Data quality issues -- our own and upstream.** This project is new and under development. It is also based on a messy, evolving, human-created dataset whose schema varies from year to year. We are aware of several [issues](https://github.com/CharityNavigator/irs990/issues) regarding our own work. There are also numerous upstream issues upstream issues coming from the IRS or the filers themselves. We discuss some of these issues in our [documentation](https://github.com/CharityNavigator/irs990/blob/master/docs/explore-database.md).
 * **990 data only.** The AWS dataset contains both 990 and 990-EZ filings. As of this version, the toolkit only provides support for 990 filings. 
 * **No 2015 data.** The AWS dataset contains data from 2011 through 2015. As of this version, the toolkit only provides support for filings through 2015.
 * **As with all complex datasets, there will be flaws, mistakes, and bugs in our database.** Some of these are already known. See the [issues page](https://github.com/CharityNavigator/irs990/issues) for known bugs. If you find something wrong, please [report an issue](https://github.com/CharityNavigator/irs990/issues).
@@ -44,8 +45,8 @@ The following limitations apply as of the latest version we are hosting.
 
 ### Building a database
 
- * The easiest, cheapest way to get started is to clone a copy of the IRS database from our S3 mirror. [Instructions](https://github.com/CharityNavigator/irs990/blob/master/documentation/clone_database.md)
- * If our files are out of date, or if you wish to customize your database, please follow our tutorial for building the database from scratch. [Instructions](https://github.com/CharityNavigator/irs990/blob/master/docs/create-database.md)
+ * The easiest, cheapest way to get started is to clone a copy of the IRS database from our S3 mirror. [[Instructions]](https://github.com/CharityNavigator/irs990/blob/master/documentation/clone_database.md)
+ * If our files are out of date, or if you wish to customize your database, please follow our tutorial for building the database from scratch. [[Instructions]](https://github.com/CharityNavigator/irs990/blob/master/docs/create-database.md)
 
 ### Exploring the schema
 
