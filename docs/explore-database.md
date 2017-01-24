@@ -40,8 +40,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Header
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `FilerEIN`
 * `TaxYr`
 * `Amended`
@@ -60,8 +60,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part I
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `VoteBodyCount`
 * `Revenue`
 * `Expenses`
@@ -69,8 +69,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part III
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `Description`
 * `ExpenseAmt`
 * `GrantAmt`
@@ -78,8 +78,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part IV
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `CurExcess`
 * `PrevExcess`
 * `HasLoan`
@@ -90,8 +90,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part VI
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `Diversion`
 * `HasMinutes`
 * `PrvForm990`
@@ -102,8 +102,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part VII(a).
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `PersonNm`
 * `TitleTxt`
 * `AvgHrs`
@@ -119,8 +119,8 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part VIII
 
-* `id`
-* `FilingId`
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `FedCmpsAmt`
 * `MemDuesAmt`
 * `FundrAmt`
@@ -138,13 +138,69 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Part IX
 
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
+* `iGrnDomOrgAmt`
+* `iGrnDomIndAmt`
+* `iGrnFrnAmt`
+* `iFundrFeesAmt`
+* `iAffilPmtAmt`
+* `iFncExpTtlAmt`
+* `iFncExpSvcAmt`
+* `iFncExpMgtAmt`
+* `iFncExpFndAmt`
+* `iJntCstTtlAmt`
+* `iJntCstSvcAmt`
+* `iJntCstMgtAmt`
+* `iJntCstFdrAmt`
+
 ### Part X
+
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
+* `TtlRevEOYAmt`
+* `TtlLblEOYAmt`
+* `UnrAssEOYAmt`
+* `TmpRstAssEOYAmt`
+* `PrmRstAssEOYAmt`
+* `CapStkTrEOY`
+* `PtInCapEOYAmt`
+* `RtnEndEOYAmt`
+* `TtlNetEOYAmt`
+* `SFAS117Yes`
+* `SFAS117No`
 
 ### Part XII
 
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
+* `FSAudited`
+* `AuditCmt`
+
 ### Schedule G
 
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
+* `PersonNm`
+* `BusinessNm1`
+* `BusinessNm2`
+* `ActivityTxt`
+* `FndControl`
+* `GrsRcptAmt`
+* `ContractAmt`
+* `OrgNetAmt`
+
 ### Schedule L
+
+* `id` -- arbitrary, table-specific ID number.
+* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
+* `PersonNm`
+* `BusinessNm`
+* `ActivityTxt`
+* `FndControl`
+* `GrsRcptAmt`
+* `ContractAmt`
+* `OrgNetAmt`
 
 ## Data quality issues
 
