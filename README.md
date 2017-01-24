@@ -58,9 +58,10 @@ After the initial release, check here for updates about changes to the database.
 
 ## Authors
 
-Code, documentation, and visualizations: David Bruce Borenstein
-
-Crosswalk between XML and database columns: Vince Bogucki
+Code and visualizations: David Bruce Borenstein
+Documentation: David Bruce Borenstein and Zach Weinsteiger
+Crosswalk between XML and database columns (990): Vince Bogucki
+Crosswalk between XML and database columns (EZ): David Bruce Borenstein and Zach Weinsteiger
 
 ## Notice
 
