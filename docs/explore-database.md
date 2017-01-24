@@ -132,7 +132,7 @@ Contributions, gifts, grants and other similar amounts
 * `FundrAmt` -- fundraising events
 * `RelOrgAmt` -- Related organizations (what does this mean?)
 * `GovGrntAmt` -- Government grants
-* `OtherCntAmt` -- All other (cash?) contributions
+* `OtherCntAmt` -- All other contributions, gifts, grants, and similar amounts not included in above
 * `NoncashAmt` -- Non-cash contributions
 * `TtlCntAmt` -- Total contributions amount
 * `TtlPrgRevAmt` -- Total program service revenue
@@ -146,19 +146,19 @@ Contributions, gifts, grants and other similar amounts
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `iGrnDomOrgAmt`
-* `iGrnDomIndAmt`
-* `iGrnFrnAmt`
-* `iFundrFeesAmt`
-* `iAffilPmtAmt`
-* `iFncExpTtlAmt`
-* `iFncExpSvcAmt`
-* `iFncExpMgtAmt`
-* `iFncExpFndAmt`
-* `iJntCstTtlAmt`
-* `iJntCstSvcAmt`
-* `iJntCstMgtAmt`
-* `iJntCstFdrAmt`
+* `GrnDomOrgAmt` -- Grants to governments and organizations in the U.S. Complete Parts I and III of Schedule I if total exceeds $5,000
+* `GrnDomIndAmt` -- Grants and other assistance to individuals in the U.S. Complete Parts II and III of Schedule I if total exceeds $5,000
+* `GrnFrnAmt` -- Grants and other assistance to governments, organizations and individuals outside the U.S.
+* `FundrFeesAmt`
+* `AffilPmtAmt`
+* `FncExpTtlAmt`
+* `FncExpSvcAmt`
+* `FncExpMgtAmt`
+* `FncExpFndAmt`
+* `JntCstTtlAmt`
+* `JntCstSvcAmt`
+* `JntCstMgtAmt`
+* `JntCstFdrAmt`
 
 ### Part X
 
