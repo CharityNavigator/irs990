@@ -40,21 +40,23 @@ The table `filing` is built from the index files directly from the IRS. It corre
 
 ### Header
 
+Several of the fields here are redundant with those in `filing`. That's because the `filing` version is pulled from the index, whereas the `header` version is pulled from the 990. Therefore, it is a reasonable sanity check to compare the two.
+
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `FilerEIN`
-* `TaxYr`
-* `Amended`
-* `FilerName1`
-* `FilerName2`
-* `PdBeginDt`
-* `PdEndDt`
-* `Org501c3`
-* `Org501cInd`
-* `Org501cType`
-* `Org4947a1`
-* `Org527Ind`
-* `FormYr`
+* `FilerEIN` -- EIN (tax ID) for 
+* `TaxYr` -- Tax Year
+* `Amended` -- Indicates this return is an amended return<
+* `FilerName1` -- Name of business
+* `FilerName2` -- Name of business, 2nd line
+* `PdBeginDt` -- Tax period begin date
+* `PdEndDt` -- Tax period end date
+* `Org501c3` -- Is it a 501(c)(3) Organization?
+* `Org501cInd` -- Is it a 501(c) Organization?
+* `Org501cType` -- If so, what type?
+* `Org4947a1` --  Is it a 4947(a)(1) Organization?
+* `Org527Ind` -- Is it a 527 Organization?
+* `FormYr` -- Year of formation
 
 ### XML (large database only)
 
