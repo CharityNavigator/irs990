@@ -64,49 +64,51 @@ Several of the fields here are redundant with those in `filing`. That's because 
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `VoteBodyCount`
-* `Revenue`
-* `Expenses`
-* `RevLessExp`
+* `VoteBodyCount` -- Number Voting Members Governing Body
+* `Revenue` -- Total Revenue - Current Year
+* `Expenses`-- Total Expenses - Current Year
+* `RevLessExp` -- Revenues Less Expenses - Current Year
 
 ### Part III
 
+The 990 schem adocumentation for this is pretty sparse. All it says is "Repeating Activities Lines 4b through 4d." The one-word definitions below are also from the schema.
+
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `Description`
-* `ExpenseAmt`
-* `GrantAmt`
-* `RevenueAmt`
+* `Description` -- "Description"
+* `ExpenseAmt` -- "Expense"
+* `GrantAmt` -- "Grants"
+* `RevenueAmt` -- "Revenue"
 
 ### Part IV
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `CurExcess`
-* `PrevExcess`
-* `HasLoan`
-* `RelPersGrant`
-* `BusOrgMem`
-* `BusFamMem`
-* `BusOfficer`
+* `CurExcess` -- Excess Benefit Transaction?
+* `PrevExcess` -- Prior Excess Benefit Transaction?
+* `HasLoan` -- Loan to Officer or DQP?
+* `RelPersRevenue` -- Grant to Related Person?
+* `BusOrgMem` -- Business Relationship With Organization?
+* `BusFamMem` -- Business Relationship Thru Family Member?
+* `BusOfficer` -- Officer, Etc. of Entity With Business Relationship?
 
 ### Part VI
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `Diversion`
-* `HasMinutes`
-* `PrvForm990`
-* `COIPolicy`
-* `WBPolicy`
-* `DocRetPolicy`
-* `CeoCompProc`
+* `Diversion` -- Material Diversion or Misuse?
+* `HasMinutes` -- Minutes of Governing Body?
+* `PrvForm990` -- Form 990 Provided to Governing Body?
+* `COIPolicy` -- Conflict of Interest Policy?
+* `WBPolicy` -- Whistleblower policy?
+* `DocRetPolicy` -- Document retention policy?
+* `CeoCompProc` -- CEO Compensation procedure?
 
 ### Part VII(a).
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `PersonNm`
+* `PersonNm` -- 
 * `TitleTxt`
 * `AvgHrs`
 * `AvgHrsRltd`
@@ -121,22 +123,24 @@ Several of the fields here are redundant with those in `filing`. That's because 
 
 ### Part VIII
 
+Contributions, gifts, grants and other similar amounts
+
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `FedCmpsAmt`
-* `MemDuesAmt`
-* `FundrAmt`
-* `RelOrgAMt`
-* `GovGrntAmt`
-* `OtherCntAmt`
-* `NoncashAmt`
-* `TtlCntAmt`
-* `TtlPrgRevAmt`
-* `CntRptFndAmt`
-* `FndGrossAmt`
-* `FndDirExpAmt`
-* `TtlFndRvAmt`
-* `TtlRevAmt`
+* `FedCmpsAmt` -- federated campaigns (what does this mean?)
+* `MemDuesAmt` -- membership dues
+* `FundrAmt` -- fundraising events
+* `RelOrgAmt` -- Related organizations (what does this mean?)
+* `GovGrntAmt` -- Government grants
+* `OtherCntAmt` -- All other (cash?) contributions
+* `NoncashAmt` -- Non-cash contributions
+* `TtlCntAmt` -- Total contributions amount
+* `TtlPrgRevAmt` -- Total program service revenue
+* `CntRptFndAmt` -- Contributions Reported from Fundraising Events
+* `FndGrossAmt` -- Gross Income Fundraising Event
+* `FndDirExpAmt` -- Fundraising Direct Expenses
+* `TtlFndRvAmt` -- Net Income From Fundraising Events
+* `TtlRevAmt` -- Total revenue
 
 ### Part IX
 
