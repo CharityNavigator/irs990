@@ -108,18 +108,18 @@ The 990 schem adocumentation for this is pretty sparse. All it says is "Repeatin
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `PersonNm` -- 
-* `TitleTxt`
-* `AvgHrs`
-* `AvgHrsRltd`
-* `TrustOrDir`
-* `Officer`
-* `KeyEmpl`
-* `HighComp`
-* `FmrOfficer`
-* `RptCmpOrg`
-* `RptCmpRltd`
-* `OtherComp`
+* `PersonNm` -- Name of person
+* `TitleTxt` -- Title
+* `AvgHrs` -- Average hours per week
+* `AvgHrsRltd` -- Average hours per week for related organizations
+* `TrustOrDir` -- Individual trustee or director?
+* `Officer` -- Officer?
+* `KeyEmpl` -- Key employee?
+* `HighComp` -- Highest compensated employee?
+* `FmrOfficer` -- Former officer or director?
+* `RptCmpOrg` -- Reportable compensation from organization
+* `RptCmpRltd` -- Reportable compensation from related organizations
+* `OtherComp` -- Other compensation
 
 ### Part VIII
 
@@ -187,26 +187,18 @@ Contributions, gifts, grants and other similar amounts
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `PersonNm`
-* `BusinessNm1`
-* `BusinessNm2`
-* `ActivityTxt`
-* `FndControl`
-* `GrsRcptAmt`
-* `ContractAmt`
-* `OrgNetAmt`
+* `PersonNm` -- Name of individual
+* `BusinessNm1` -- Name of entity (fundraiser), line 1
+* `BusinessNm2` -- Name of entity (fundraiser), line 2
+* `ActivityTxt` -- Description of activity
+* `FndControl` -- Fundraiser Control of Funds?
+* `GrsRcptAmt` -- Gross receipts from activity
+* `ContractAmt` -- Amount paid to (or retained by) fundraiser listed in (i)
+* `OrgNetAmt` -- Amount paid to (or retained by) organization
 
-### Schedule L
+### Schedule L, Part II
 
-* `id` -- arbitrary, table-specific ID number.
-* `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `PersonNm`
-* `BusinessNm`
-* `ActivityTxt`
-* `FndControl`
-* `GrsRcptAmt`
-* `ContractAmt`
-* `OrgNetAmt`
+**NOTE: There is currently an open [issue](https://github.com/CharityNavigator/irs990/issues/5) with our processing of Schedule L. Please do not use it.**
 
 ## Data quality issues
 
