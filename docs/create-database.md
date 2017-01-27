@@ -10,11 +10,17 @@ If you want to add new fields to the database or build a newer one than the vers
 
 **The following steps involve creating several virtual computers in the cloud. Every single one of them will be billed by the hour until you shut them off. They will need to run for longer, increasing the total cost of the project. Most importantly, they will be vulnerable to hacking unless you take additional steps to secure them. Please only do this if you know what you're doing.**
 
-## Apology for bad code
+## Feedback and pull requests welcome
 
-This project was my first foray into Spark, and my first non-trivial projet in Amazon Web Services. I suspect that I will look back on it with a fair bit of embarassment. That said,, I agree with [David Robinson and Hadley Wickham](http://varianceexplained.org/programming/bad-code/) about the importance of using and owning bad code as a step towards good code, and so I have open-sourced it anyway.
+This project is intended as a launching point for collaborative development on tools for the IRS 990. Our goal was to get something to the community as quickly as possible, in order to encourage feedback and begin an improvement process.
 
-I used Spark here for two reasons: first, it provided cheap parallelism; and second, it provided an expandable platform for much more complicated analyses. I recognize that my use of Spark could be much richer and more efficient than it is.
+If you are using this project and find the need to extend or modify it, we encourage you to document your changes and create a pull request. If you have a feature that you need help building, please [email the project lead](mailto:dborenstein@charitynavigator.org) about a collaboration.
+
+*On a personal note, this project was my first foray into Spark, and my first non-trivial project using Amazon Web Services. I suspect that I will look back on it with a mixture of pride and embarassment. (See [David Robinson and Hadley Wickham](http://varianceexplained.org/programming/bad-code/)'s argument about the importance of writing bad code.) Why Spark? Two reasons: first, it provided cheap parallelism; and second, it provided an expandable platform for more complicated analyses. --David Borenstein*
+
+## Support for these steps is limited
+
+The following steps are for an advanced audience. The instructions were created as much for in-house use as for public consumption. As such, while we would be happy to discuss them and provide reasonable assistance, please understand that we can only provide so much help. There are a lot of resources you can use to teach yourself any of the steps here. That's how we did it.
 
 ## Instructions
 
@@ -73,13 +79,4 @@ I used Spark here for two reasons: first, it provided cheap parallelism; and sec
   1. Once you shut down your EMR cluster, you will no longer have any way of logging into your database (if you followed the steps above). Modify the security group for your RDS to allow traffic from another, less expensive, computer.
 1. Use your database, or dump it to .sql, then shut it down
   1. Your SQL instance will continue to incur costs until you shut it down.
-  
-## Notice
 
-*Copyright 2017 Charity Navigator.*
-
-*Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:*
-
-*The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.*
-
-*THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*
