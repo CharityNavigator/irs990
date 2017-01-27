@@ -12,7 +12,7 @@ This toolkit is neither perfect nor comprehensive, but we hope it can be a start
 
 ## What is available here:
 
-We recommend using our [[quick start]],(https://charitynavigator.github.io/irs990/quick-start) but we provide other options as well.
+We recommend using our [[quick start]](https://charitynavigator.github.io/irs990/quick-start), but we provide other options as well.
 
 * **Quick-start option (recommended):** Create a virtual machine on Amazon EC2 with the database and RStudio pre-installed, along with a quick-start tutorial to begin exploring quickly. [[Click for more info.]](https://charitynavigator.github.io/irs990/quick-start)
 
