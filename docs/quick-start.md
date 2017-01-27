@@ -1,6 +1,6 @@
 # Quick start
 
-The easiest way to get started with the toolkit is to create an Amazon EC2 instance with our database and RStudio pre-loaded. The following steps will actually create a website from which you can write code to explore the database. A tutorial will appear on screen as soon as you log in. You can even link it to Dropbox to transfer work in and out.
+The easiest way to get started with the toolkit is to create an Amazon EC2 instance with the [smaller of our two databases](http://990.charitynavigator.org/clone-database) and RStudio pre-loaded. The following steps will actually create a website from which you can write code to explore the database. A tutorial will appear on screen as soon as you log in. You can even link it to Dropbox to transfer work in and out.
 
 ## Licensing considerations
 
