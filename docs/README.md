@@ -14,11 +14,11 @@ This toolkit is neither perfect nor comprehensive, but we hope it can be a start
 
 We recommend using our [[quick start]](https://charitynavigator.github.io/irs990/quick-start), but we provide other options as well.
 
-* **Quick-start option (recommended):** Create a virtual machine on Amazon EC2 with the database and RStudio pre-installed, along with a quick-start tutorial to begin exploring quickly. [[Click for more info.]](https://charitynavigator.github.io/irs990/quick-start)
+* **[[Quick-start option]](https://charitynavigator.github.io/irs990/quick-start) (recommended):** Create a virtual machine on Amazon EC2 with the database and RStudio pre-installed, along with a quick-start tutorial to begin exploring quickly. [[Click for more info.]](https://charitynavigator.github.io/irs990/quick-start)
 
-* **Clone our database:** Download a snapshot of the 990 database as a `.sql` file, and load it into a MySQL (or similar) database. [[Click for more info.]](https://charitynavigator.github.io/irs990/clone-database)
+* **[[Clone our database]](https://charitynavigator.github.io/irs990/clone-database):** Download a snapshot of the 990 database as a `.sql` file, and load it into a MySQL (or similar) database. [[Click for more info.]](https://charitynavigator.github.io/irs990/clone-database)
 
-* **Build from scratch:** For advanced users who wish to modify or extend the 990 toolkit, we provide instructions for building the database from scratch. [[Click for more info.]](https://github.com/CharityNavigator/irs990/blob/master/docs/create-database.md)
+* **[[Build from scratch]](https://charitynavigator.github.io/irs990/create-database):** For advanced users who wish to modify or extend the 990 toolkit, we provide instructions for building the database from scratch. [[Click for more info.]](https://charitynavigator.github.io/irs990/create-database)
 
 ## Who should use this toolkit
 
