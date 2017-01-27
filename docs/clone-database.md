@@ -62,13 +62,3 @@ In principle, you could use nearly the exact same steps for the large database. 
 * Download and use`irs990_complete_2017_01_18.sql.tar.gz` instead of `irs990_no_xml_2017_01_18.sql.tar.gz`.
 
 In practice, we recommend using separate computers for the database and for your interaction with it. It will run faster and probably end up cheaper. The easiest way to do this is to create an [RDS](https://aws.amazon.com/rds/) instance for your database, which is a managed service for databases. The downside is that this is more complex and, if done wrong, could create security issues (or large server bills), so consult an IT person. 
-
-## Notice
-
-*Copyright 2017 Charity Navigator.*
-
-*Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:*
-
-*The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.*
-
-*THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*
