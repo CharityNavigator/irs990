@@ -1,24 +1,36 @@
-# IRS 990 Toolkit (UNDER DEVELOPMENT)
+# IRS Form 990 Decoder
 
-This repository contains everything you need to get started exploring the IRS 990 dataset [hosted by Amazon Web Services on S3](https://aws.amazon.com/public-datasets/irs-990/). This includes instructions for an easier-to-use 990 database provided free to the public by [Charity Navigator](https://www.charitynavigator.org/).
+This repository contains everything you need to get started exploring the IRS Form 990 dataset [hosted by Amazon Web Services on S3](https://aws.amazon.com/public-datasets/irs-990/). This includes instructions for an easier-to-use 990 database provided free to the public by [Charity Navigator](https://www.charitynavigator.org/).
 
 ## Why we are providing these files
 
-Charity Navigator is dedicated to the advancement of informed giving. The IRS 990 is a crucial public record of nonprofit governance, but the original electronic records are very hard to work with.
+Charity Navigator is dedicated to the advancement of informed giving. In the United States, most organizations exempt from income tax under section 501(a) must file an annual information return called the Form 990. These documents contain a wealth of information about each organization’s operations, finances and governance practices. Philanthropists, regulators, researchers and others rely on the  IRS Form 990 as a crucial public record of nonprofit governance. 
+
+Historically, these documents were completed and mailed into the IRS. More recently, organizations began to submit them digitally. And within the last year, the IRS began to make the digitized data available to the public. 
+
+While this is a great advancement for the sector, many have found these  original electronic records to be difficult to work with.. That’s because the original Form 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
 
 The original 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
 
 This toolkit is neither perfect nor comprehensive, but we hope it can be a starting point for data scientists and subject area experts looking to explore public records for the charitable sector.
 
-## What is available here:
+## Getting started
 
 We recommend using our [quick start](https://charitynavigator.github.io/irs990/quick-start), but we provide other options as well.
 
 * **[Quick-start option](https://charitynavigator.github.io/irs990/quick-start) (recommended):** Create a virtual machine on Amazon EC2 with the database and RStudio pre-installed, along with a quick-start tutorial to begin exploring quickly. [[Click for more info.]](https://charitynavigator.github.io/irs990/quick-start)
 
-* **[Clone our database](https://charitynavigator.github.io/irs990/clone-database):** Download a snapshot of the 990 database as a `.sql` file, and load it into a MySQL (or similar) database. [[Click for more info.]](https://charitynavigator.github.io/irs990/clone-database)
+* **[Clone our database](https://charitynavigator.github.io/irs990/clone-database):** Download a snapshot of the Form 990 Decoder database as a `.sql` file, and load it into a MySQL (or similar) database. [[Click for more info.]](https://charitynavigator.github.io/irs990/clone-database)
 
-* **[Build from scratch](https://charitynavigator.github.io/irs990/create-database):** For advanced users who wish to modify or extend the 990 toolkit, we provide instructions for building the database from scratch. [[Click for more info.]](https://charitynavigator.github.io/irs990/create-database)
+* **[Build from scratch](https://charitynavigator.github.io/irs990/create-database):** For advanced users who wish to modify or extend the Form 990 Decoder, we provide instructions for building the database from scratch. [[Click for more info.]](https://charitynavigator.github.io/irs990/create-database)
+
+## Additional documentation
+
+In addition to the documentation for each start-up option above, we also provide the following documentation:
+
+* **[Data dictionary](http://990.charitynavigator.org/explore-database):** A description of each field and table included in our database.
+
+* **[Github index](https://github.com/CharityNavigator/irs990):** A description of how the project is built, including a description of the files involved.
 
 ## Who should use this toolkit
 
