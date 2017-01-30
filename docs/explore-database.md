@@ -75,10 +75,10 @@ The 990 schem adocumentation for this is pretty sparse. All it says is "Repeatin
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `Description` -- "Description"
-* `ExpenseAmt` -- "Expense"
-* `GrantAmt` -- "Grants"
-* `RevenueAmt` -- "Revenue"
+* `Description` -- Description of program.
+* `ExpenseAmt` -- Expenses of program.
+* `GrantAmt` -- Amount of grants included in program expenses.
+* `RevenueAmt` -- Revenue from program.
 
 ### Part IV
 
@@ -149,32 +149,32 @@ Contributions, gifts, grants and other similar amounts
 * `GrnDomOrgAmt` -- Grants to governments and organizations in the U.S. Complete Parts I and III of Schedule I if total exceeds $5,000
 * `GrnDomIndAmt` -- Grants and other assistance to individuals in the U.S. Complete Parts II and III of Schedule I if total exceeds $5,000
 * `GrnFrnAmt` -- Grants and other assistance to governments, organizations and individuals outside the U.S.
-* `FundrFeesAmt`
-* `AffilPmtAmt`
-* `FncExpTtlAmt`
-* `FncExpSvcAmt`
-* `FncExpMgtAmt`
-* `FncExpFndAmt`
-* `JntCstTtlAmt`
-* `JntCstSvcAmt`
-* `JntCstMgtAmt`
-* `JntCstFdrAmt`
+* `FundrFeesAmt`-- Total amount paid to professional fundraising services outside of the organization.
+* `AffilPmtAmt`-- Total amount paid to affiliated organizations.
+* `FncExpTtlAmt`-- Total amount of functional expenses.
+* `FncExpSvcAmt`-- Total amount of program expenses.
+* `FncExpMgtAmt`-- Total amount of administrative expenses.
+* `FncExpFndAmt`-- Total amount of fundraising expenses.
+* `JntCstTtlAmt`-- Total amount of joint costs.
+* `JntCstSvcAmt`-- Total amount of joint costs allocated to program expenses.
+* `JntCstMgtAmt`-- Total amount of joint costs allocated to administrative expenses. 
+* `JntCstFdrAmt`-- Total amount of joint costs allocated to fundraising expenses.
 
 ### Part X
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `TtlRevEOYAmt`
-* `TtlLblEOYAmt`
-* `UnrAssEOYAmt`
-* `TmpRstAssEOYAmt`
-* `PrmRstAssEOYAmt`
-* `CapStkTrEOY`
-* `PtInCapEOYAmt`
-* `RtnEndEOYAmt`
-* `TtlNetEOYAmt`
-* `SFAS117Yes`
-* `SFAS117No`
+* `TtlRevEOYAmt`-- Total assets at fiscal year end.
+* `TtlLblEOYAmt`-- Total liabilities at fiscal year end.
+* `UnrAssEOYAmt`-- Total amount of unrestricted assets at fiscal year end.
+* `TmpRstAssEOYAmt`-- Total amount of temporarily restricted assets at fiscal year end.
+* `PrmRstAssEOYAmt`-- Total amount of permanently restricted assets at fiscal year end.
+* `CapStkTrEOY`-- Capital stock or trust principle, or current funds at fiscal year end.
+* `PtInCapEOYAmt`-- Paid-in or capital surplus, or land, building or equipment fund at fiscal year end.
+* `RtnEndEOYAmt`-- Retained earnings, endowment, accumulated income, or other funds at fiscal year end. 
+* `TtlNetEOYAmt`-- Total net assets or fund balance at fiscal year end. 
+* `SFAS117Yes`-- The organization follows SFAS 117 (ASC 958). 
+* `SFAS117No`-- The organization does not follow SFAS 117 (ASC 958).
 
 ### Part XII
 
