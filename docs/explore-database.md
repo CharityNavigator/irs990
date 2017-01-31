@@ -64,10 +64,10 @@ Several of the fields here are redundant with those in `filing`. That's because 
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `VoteBodyCount` -- Number Voting Members Governing Body
-* `Revenue` -- Total Revenue - Current Year
-* `Expenses`-- Total Expenses - Current Year
-* `RevLessExp` -- Revenues Less Expenses - Current Year
+* `VoteBodyCount` -- Number Voting Members Governing Body.
+* `Revenue` -- Total Revenue - Current Year.
+* `Expenses`-- Total Expenses - Current Year.
+* `RevLessExp` -- Revenues Less Expenses - Current Year.
 
 ### Part III
 
@@ -75,18 +75,18 @@ The 990 schem adocumentation for this is pretty sparse. All it says is "Repeatin
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `Description` -- Description of program.
-* `ExpenseAmt` -- Expenses of program.
+* `Description` -- Description of individual program.
+* `ExpenseAmt` -- Expenses of individual program.
 * `GrantAmt` -- Amount of grants included in program expenses.
-* `RevenueAmt` -- Revenue from program.
+* `RevenueAmt` -- Revenue generated from program.
 
 ### Part IV
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `CurExcess` -- Did the organization engage in an excess benefit transaction with a disqualified person during the year?
-* `PrevExcess` -- Is the organization aware that it engeged in an excess benefit transaction with a disqualified person in the prior year?
-* `HasLoan` -- Did the organization engage in loans to or from any current or former officers or disqualified persons?
+* `PrevExcess` -- Is the organization aware that it engaged in an excess benefit transaction with a disqualified person in the prior year?
+* `HasLoan` -- Did the organization engage in loans to or from any current or former officer, director, trustee, key employee, or disqualified persons?
 * `RelPersRevenue` -- Did the organization provide grants to a related person?
 * `BusOrgMem` -- Was the organization a party to a business transaction with an officer, director, trustee, or key employee?
 * `BusFamMem` -- Was the organization a party to a business transaction with a family member of an officer, director, trustee, or key employee?
@@ -111,9 +111,9 @@ The 990 schem adocumentation for this is pretty sparse. All it says is "Repeatin
 * `PersonNm` -- Name of individual.
 * `TitleTxt` -- Title of individual.
 * `AvgHrs` -- Average hours worked for the organization per week.
-* `AvgHrsRltd` -- Average hours per week worked for related organizations.
-* `TrustOrDir` -- Is the individaul an individaul trustee or director?
-* `Officer` -- Is the indivudal an officer?
+* `AvgHrsRltd` -- Average hours worked for related organizations per week.
+* `TrustOrDir` -- Is the individual an individual trustee or director?
+* `Officer` -- Is the individual an officer?
 * `KeyEmpl` -- Is the individual a key employee?
 * `HighComp` -- Is the individual a highest compensated employee?
 * `FmrOfficer` -- Is the individual a former officer or director?
