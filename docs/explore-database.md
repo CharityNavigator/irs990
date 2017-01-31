@@ -46,7 +46,7 @@ Several of the fields here are redundant with those in `filing`. That's because 
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `FilerEIN` -- EIN (tax ID) for 
 * `TaxYr` -- Tax Year
-* `Amended` -- Indicates this return is an amended return<
+* `Amended` -- Indicates this return is an amended return
 * `FilerName1` -- Name of business
 * `FilerName2` -- Name of business, 2nd line
 * `PdBeginDt` -- Tax period begin date
@@ -64,10 +64,10 @@ Several of the fields here are redundant with those in `filing`. That's because 
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `VoteBodyCount` -- Number Voting Members Governing Body
-* `Revenue` -- Total Revenue - Current Year
-* `Expenses`-- Total Expenses - Current Year
-* `RevLessExp` -- Revenues Less Expenses - Current Year
+* `VoteBodyCount` -- Number Voting Members Governing Body.
+* `Revenue` -- Total Revenue - Current Year.
+* `Expenses`-- Total Expenses - Current Year.
+* `RevLessExp` -- Revenues Less Expenses - Current Year.
 
 ### Part III
 
@@ -75,51 +75,51 @@ The 990 schem adocumentation for this is pretty sparse. All it says is "Repeatin
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `Description` -- "Description"
-* `ExpenseAmt` -- "Expense"
-* `GrantAmt` -- "Grants"
-* `RevenueAmt` -- "Revenue"
+* `Description` -- Description of individual program.
+* `ExpenseAmt` -- Expenses of individual program.
+* `GrantAmt` -- Amount of grants included in program expenses.
+* `RevenueAmt` -- Revenue generated from program.
 
 ### Part IV
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `CurExcess` -- Excess Benefit Transaction?
-* `PrevExcess` -- Prior Excess Benefit Transaction?
-* `HasLoan` -- Loan to Officer or DQP?
-* `RelPersRevenue` -- Grant to Related Person?
-* `BusOrgMem` -- Business Relationship With Organization?
-* `BusFamMem` -- Business Relationship Thru Family Member?
-* `BusOfficer` -- Officer, Etc. of Entity With Business Relationship?
+* `CurExcess` -- Did the organization engage in an excess benefit transaction with a disqualified person during the year?
+* `PrevExcess` -- Is the organization aware that it engaged in an excess benefit transaction with a disqualified person in the prior year?
+* `HasLoan` -- Did the organization engage in loans to or from any current or former officer, director, trustee, key employee, or disqualified persons?
+* `RelPersRevenue` -- Did the organization provide grants to a related person?
+* `BusOrgMem` -- Was the organization a party to a business transaction with an officer, director, trustee, or key employee?
+* `BusFamMem` -- Was the organization a party to a business transaction with a family member of an officer, director, trustee, or key employee?
+* `BusOfficer` -- Was the organization a party to a business transaction with an organization related to an officer, director, trustee, or key employee? 
 
 ### Part VI
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `Diversion` -- Material Diversion or Misuse?
-* `HasMinutes` -- Minutes of Governing Body?
-* `PrvForm990` -- Form 990 Provided to Governing Body?
-* `COIPolicy` -- Conflict of Interest Policy?
-* `WBPolicy` -- Whistleblower policy?
-* `DocRetPolicy` -- Document retention policy?
-* `CeoCompProc` -- CEO Compensation procedure?
+* `Diversion` -- Was the organization aware of a significant diversion of the organization's assets during the year?
+* `HasMinutes` -- Does the organization keep meeting minutes of governing body?
+* `PrvForm990` -- Does the organization provide a complete copy of the Form 990 to the governing body before filing?
+* `COIPolicy` -- Does the organization have a written conflict of interest policy?
+* `WBPolicy` -- Does the organization have a written whistleblower policy?
+* `DocRetPolicy` -- Does the organization have a written document retention and destruction policy?
+* `CeoCompProc` -- Does the organization have a CEO compensation policy based on a review and approval by an independant party?
 
 ### Part VII(a).
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `PersonNm` -- Name of person
-* `TitleTxt` -- Title
-* `AvgHrs` -- Average hours per week
-* `AvgHrsRltd` -- Average hours per week for related organizations
-* `TrustOrDir` -- Individual trustee or director?
-* `Officer` -- Officer?
-* `KeyEmpl` -- Key employee?
-* `HighComp` -- Highest compensated employee?
-* `FmrOfficer` -- Former officer or director?
-* `RptCmpOrg` -- Reportable compensation from organization
-* `RptCmpRltd` -- Reportable compensation from related organizations
-* `OtherComp` -- Other compensation
+* `PersonNm` -- Name of individual.
+* `TitleTxt` -- Title of individual.
+* `AvgHrs` -- Average hours worked for the organization per week.
+* `AvgHrsRltd` -- Average hours worked for related organizations per week.
+* `TrustOrDir` -- Is the individual an individual trustee or director?
+* `Officer` -- Is the individual an officer?
+* `KeyEmpl` -- Is the individual a key employee?
+* `HighComp` -- Is the individual a highest compensated employee?
+* `FmrOfficer` -- Is the individual a former officer or director?
+* `RptCmpOrg` -- Reportable compensation from organization.
+* `RptCmpRltd` -- Reportable compensation from related organizations.
+* `OtherComp` -- Other compensation.
 
 ### Part VIII
 
@@ -127,74 +127,74 @@ Contributions, gifts, grants and other similar amounts
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `FedCmpsAmt` -- federated campaigns (what does this mean?)
-* `MemDuesAmt` -- membership dues
-* `FundrAmt` -- fundraising events
-* `RelOrgAmt` -- Related organizations (what does this mean?)
-* `GovGrntAmt` -- Government grants
-* `OtherCntAmt` -- All other contributions, gifts, grants, and similar amounts not included in above
-* `NoncashAmt` -- Non-cash contributions
-* `TtlCntAmt` -- Total contributions amount
-* `TtlPrgRevAmt` -- Total program service revenue
-* `CntRptFndAmt` -- Contributions Reported from Fundraising Events
-* `FndGrossAmt` -- Gross Income Fundraising Event
-* `FndDirExpAmt` -- Fundraising Direct Expenses
-* `TtlFndRvAmt` -- Net Income From Fundraising Events
-* `TtlRevAmt` -- Total revenue
+* `FedCmpsAmt` -- Contributions generated through federated campaigns.
+* `MemDuesAmt` -- Contributions generated through membership dues.
+* `FundrAmt` -- Contributions generated through fundraising events.
+* `RelOrgAmt` -- Contributions generated through related organizations.
+* `GovGrntAmt` -- Contributions recieved through grants from the government.
+* `OtherCntAmt` -- All other contributions, gifts, grants, and similar amounts not included in above.
+* `NoncashAmt` -- Amount of contributions listed above in the form of non-cash items.
+* `TtlCntAmt` -- Total amount of contributions.
+* `TtlPrgRevAmt` -- Total income generated through program service revenue.
+* `CntRptFndAmt` -- Contributions generated through fundraising events.
+* `FndGrossAmt` -- Gross income of fundraising events.
+* `FndDirExpAmt` -- Direct expenses of fundraising events.
+* `TtlFndRvAmt` -- Net income of fundraising events.
+* `TtlRevAmt` -- Total revenue.
 
 ### Part IX
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `GrnDomOrgAmt` -- Grants to governments and organizations in the U.S. Complete Parts I and III of Schedule I if total exceeds $5,000
-* `GrnDomIndAmt` -- Grants and other assistance to individuals in the U.S. Complete Parts II and III of Schedule I if total exceeds $5,000
-* `GrnFrnAmt` -- Grants and other assistance to governments, organizations and individuals outside the U.S.
-* `FundrFeesAmt`
-* `AffilPmtAmt`
-* `FncExpTtlAmt`
-* `FncExpSvcAmt`
-* `FncExpMgtAmt`
-* `FncExpFndAmt`
-* `JntCstTtlAmt`
-* `JntCstSvcAmt`
-* `JntCstMgtAmt`
-* `JntCstFdrAmt`
+* `GrnDomOrgAmt` -- Grants made to governments and organizations in the U.S.
+* `GrnDomIndAmt` -- Grants and other assistance made to individuals in the U.S.
+* `GrnFrnAmt` -- Grants and other assistance made to governments, organizations and individuals outside the U.S.
+* `FundrFeesAmt`-- Total amount paid to professional fundraising services outside of the organization.
+* `AffilPmtAmt`-- Total amount paid to affiliated organizations.
+* `FncExpTtlAmt`-- Total amount of functional expenses.
+* `FncExpSvcAmt`-- Total amount of program expenses.
+* `FncExpMgtAmt`-- Total amount of administrative expenses.
+* `FncExpFndAmt`-- Total amount of fundraising expenses.
+* `JntCstTtlAmt`-- Total amount of joint costs.
+* `JntCstSvcAmt`-- Total amount of joint costs allocated to program expenses.
+* `JntCstMgtAmt`-- Total amount of joint costs allocated to administrative expenses. 
+* `JntCstFdrAmt`-- Total amount of joint costs allocated to fundraising expenses.
 
 ### Part X
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `TtlRevEOYAmt`
-* `TtlLblEOYAmt`
-* `UnrAssEOYAmt`
-* `TmpRstAssEOYAmt`
-* `PrmRstAssEOYAmt`
-* `CapStkTrEOY`
-* `PtInCapEOYAmt`
-* `RtnEndEOYAmt`
-* `TtlNetEOYAmt`
-* `SFAS117Yes`
-* `SFAS117No`
+* `TtlRevEOYAmt`-- Total assets at fiscal year end.
+* `TtlLblEOYAmt`-- Total liabilities at fiscal year end.
+* `UnrAssEOYAmt`-- Total amount of unrestricted assets at fiscal year end.
+* `TmpRstAssEOYAmt`-- Total amount of temporarily restricted assets at fiscal year end.
+* `PrmRstAssEOYAmt`-- Total amount of permanently restricted assets at fiscal year end.
+* `CapStkTrEOY`-- Capital stock or trust principle, or current funds at fiscal year end.
+* `PtInCapEOYAmt`-- Paid-in or capital surplus, or land, building or equipment fund at fiscal year end.
+* `RtnEndEOYAmt`-- Retained earnings, endowment, accumulated income, or other funds at fiscal year end. 
+* `TtlNetEOYAmt`-- Total net assets or fund balance at fiscal year end. 
+* `SFAS117Yes`-- The organization follows SFAS 117 (ASC 958). 
+* `SFAS117No`-- The organization does not follow SFAS 117 (ASC 958).
 
 ### Part XII
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
-* `FSAudited`
-* `AuditCmt`
+* `FSAudited`-- Were the organization's financial statements compliled or reviewed by an independant accountant?
+* `AuditCmt`-- Does the organization have an audit oversight committee?
 
 ### Schedule G
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
 * `PersonNm` -- Name of individual
-* `BusinessNm1` -- Name of entity (fundraiser), line 1
-* `BusinessNm2` -- Name of entity (fundraiser), line 2
-* `ActivityTxt` -- Description of activity
-* `FndControl` -- Fundraiser Control of Funds?
-* `GrsRcptAmt` -- Gross receipts from activity
-* `ContractAmt` -- Amount paid to (or retained by) fundraiser listed in (i)
-* `OrgNetAmt` -- Amount paid to (or retained by) organization
+* `BusinessNm1` -- Name of entity (fundraiser), line 1.
+* `BusinessNm2` -- Name of entity (fundraiser), line 2.
+* `ActivityTxt` -- Description of activity.
+* `FndControl` -- Did fundraiser have custody or control of contributions?
+* `GrsRcptAmt` -- Gross receipts from activity.
+* `ContractAmt` -- Amount paid to (or retained by) fundraiser.
+* `OrgNetAmt` -- Amount paid to (or retained by) organization.
 
 ### Schedule L, Part II
 
@@ -211,4 +211,4 @@ For known issues related to this dataset, see our [issues page](https://github.c
 #### Multiple 990s for the same EIN
 
 #### Institutional trustees vs board members
- 
+  
