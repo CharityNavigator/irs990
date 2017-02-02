@@ -32,6 +32,8 @@ In addition to the documentation for each start-up option above, we also provide
 
 * **[Github index](https://github.com/CharityNavigator/irs990):** A description of how the project is built, including a description of the files involved.
 
+* **[R tutorial](http://990.charitynavigator.org/tutorial.R)** The tutorial that appears when you follow the quick-start instructions for our **small** database.
+
 ## Who should use this toolkit
 
 These tools were prepared for researchers, data scientists, and enthusiasts interested in exploring the IRS 990 database. These tools are partial and preliminary, but they can help get you get started working with some have found to be a difficult-to-use dataset. You should **not** use this dataset for legal investigations, policy decisions, or published findings without some scrutiny and careful cleaning. If you do polish things up, please consider contributing to this repository.
@@ -49,20 +51,10 @@ The following limitations apply as of the latest version we are hosting.
 * **No 2015 data.** The AWS dataset contains data from 2011 through 2015. As of this version, the toolkit only provides support for filings through 2015.
 * **As with all complex datasets, there will be flaws, mistakes, and bugs in our database.** Some of these are already known. See the [issues page](https://github.com/CharityNavigator/irs990/issues) for known bugs. If you find something wrong, please [report an issue](https://github.com/CharityNavigator/irs990/issues).
 
-## Getting started
-
-### Building a database
-
- * The easiest, cheapest way to get started is to clone a copy of the IRS database from our S3 mirror. [[Instructions]](https://github.com/CharityNavigator/irs990/blob/master/documentation/clone_database.md)
- * If our files are out of date, or if you wish to customize your database, please follow our tutorial for building the database from scratch. [[Instructions]](https://github.com/CharityNavigator/irs990/blob/master/docs/create-database.md)
-
-### Exploring the schema
-
-If you're just getting started with the AWS 990 dataset, you may wish to explore the structure of the data. We are building a tool for visualizing and exploring the dataset at a high level. The tool is currently being built from the ground up. If you are interested in a preview of the visualization tool, please [contact us](mailto:dborenstein@charitynavigator.org).
-
 ### Change log
 
 * 2017-02-02: Rebuilt quick-start AMI to eliminate error message on startup. Also created an AMI for the large database instance.
+
 ## Authors
 
 Code and visualizations: David Bruce Borenstein
