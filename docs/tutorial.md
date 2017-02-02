@@ -1,9 +1,10 @@
-# This file contains the text of the tutorial that appears when you follow our
+# This file contains the text of the R tutorial that appears when you follow our
 # quick-start instructions. These instructions can be found at:
 #
 #    http://990.charitynavigator.org/quick-start
 #
-# If you have any issues, please contact David Borenstein:
+# These steps are meant to be run in R. If you have any issues, please contact
+# David Bruce Borenstein:
 #
 #    dborenstein@charitynavigator.org
 
