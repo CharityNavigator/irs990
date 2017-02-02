@@ -8,7 +8,7 @@ Charity Navigator is dedicated to the advancement of informed giving. In the Uni
 
 Historically, these documents were completed and mailed into the IRS. More recently, organizations began to submit them digitally. And within the last year, the IRS began to make the digitized data available to the public. 
 
-While this is a great advancement for the sector, many have found these  original electronic records to be difficult to work with.. That’s because the original Form 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
+While this is a great advancement for the sector, many have found these  original electronic records to be difficult to work with. That’s because the original Form 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
 
 The original 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
 
