@@ -62,8 +62,7 @@ If you're just getting started with the AWS 990 dataset, you may wish to explore
 
 ### Change log
 
-After the initial release, check here for updates about changes to the database.
-
+* 2017-02-02: Rebuilt quick-start AMI to eliminate error message on startup. Also created an AMI for the large database instance.
 ## Authors
 
 Code and visualizations: David Bruce Borenstein
