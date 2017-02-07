@@ -10,8 +10,6 @@ Historically, these documents were completed and mailed into the IRS. More recen
 
 While this is a great advancement for the sector, many have found these  original electronic records to be difficult to work with. That’s because the original Form 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
 
-The original 990 dataset consists of more than a million individual files. The encoding scheme for these files varies from case to case, and the file structure alone makes them very difficult to retrieve. The tools offered here are intended to facilitate retrieval, comprehension and analysis.
-
 This toolkit is neither perfect nor comprehensive, but we hope it can be a starting point for data scientists and subject area experts looking to explore public records for the charitable sector.
 
 ## Getting started
