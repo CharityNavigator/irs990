@@ -58,8 +58,6 @@ Several of the fields here are redundant with those in `filing`. That's because 
 * `Org527Ind` -- Is it a 527 Organization?
 * `FormYr` -- Year of formation
 
-### XML (large database only)
-
 ### Part I
 
 * `id` -- arbitrary, table-specific ID number.
