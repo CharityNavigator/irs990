@@ -67,7 +67,7 @@ The following steps are for an advanced audience. The instructions were created 
    1. Type `sudo yum install git` and wait for git to install.
    1. Type `sudo pip install sqlalchemy` and wait for SQLAlchemy to install.
    1. Clone this repository from github by typing `git clone https://github.com/CharityNavigator/irs990` 
-   1. Type `echo "export PYTHONPATH=\"/home/hadoop/irs990\"" >> .bash_profile`.
+   1. Add the line `echo "export PYTHONPATH=\"/home/hadoop/irs990\""` to your `.bash_profile` file. Then run `source .bash_profile`.
    1. Create a `.boto` file with your access key and secret key (Note to self: provide instructions on how to do this)
 1. Run the code
    1. Run 'cd irs990`.
