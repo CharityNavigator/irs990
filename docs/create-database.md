@@ -73,7 +73,7 @@ The following steps are for an advanced audience. The instructions were created 
    1. Run 'cd irs990`.
    1. Run `sh create_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will _configure_ the database.
    1. Run `sh load_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will download data from S3.
-   1. Run `sh load_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will _populate_ the database.  
+   1. Run `sh parse_990_database.sh my-endpoint-name my-database-username my-database-password`, where my-endpoint-name and so on are as above. This will _populate_ the database.  
 1. Shut down your EMR cluster immediately
    1. The EMR cluster is now no longer needed and is running up a hefty bill. Shut it down immediately unless you have plans that involve it.
    1. Once you shut down your EMR cluster, you will no longer have any way of logging into your database (if you followed the steps above). Modify the security group for your RDS to allow traffic from another, less expensive, computer.
