@@ -38,9 +38,9 @@ Using either the small or the large database requires the ability to use SQL dat
    1. If you do not already have one for another reason, [create an AWS access key pair](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html). This is not the same as the key pair you created earlier. That let you log into the virtual computer; this allows you to authenticate for billing purposes, which you must do in order to download the 990 data.
    1. Run `aws configure` and provide the access key and secret access key. If needed, see the [AWS documentation](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) for more info.
 1. Download and set up the database.
-   1. Download the latest version of our database image by typing `aws s3 cp s3://irs-990-toolkit/data/irs990_no_xml_2017_01_18.sql.tar.gz .`
-   1. The file is compressed for easier transfer. Uncompress it by typing `tar -xvf irs990_no_xml_2017_01_18.sql.tar.gz`
-   1. Load the database by typing `mysql -u root -pmypassword irs990 < irs990_no_xml_2017_01_18.sql`, where `mypassword` is the root password you created. This will take about 10 minutes.
+   1. Download the latest version of our database image by typing `aws s3 cp s3://irs-990-toolkit/data/irs990_no_xml_2017_03_07.sql.tar.gz .`
+   1. The file is compressed for easier transfer. Uncompress it by typing `tar -xvf irs990_no_xml_2017_03_07.sql.tar.gz`
+   1. Load the database by typing `mysql -u root -pmypassword irs990 < irs990_no_xml_2017_03_07.sql`, where `mypassword` is the root password you created. This will take about 10 minutes.
 
 ## Exploring the dataset
 
@@ -59,6 +59,6 @@ The database is now ready for use. It is also costing you by the hour. **When yo
 In principle, you could use nearly the exact same steps for the large database. The only differences are as follows:
 * Use an instance type with more computing power and a lot more memory, such as "r4.2xlarge."
 * Provision much more storage space--more like 100 GiB.
-* Download and use`irs990_complete_2017_01_18.sql.tar.gz` instead of `irs990_no_xml_2017_01_18.sql.tar.gz`.
+* Download and use`irs990_complete_2017_03_07.sql.tar.gz` instead of `irs990_no_xml_2017_03_07.sql.tar.gz`.
 
 In practice, we recommend using separate computers for the database and for your interaction with it. It will run faster and probably end up cheaper. The easiest way to do this is to create an [RDS](https://aws.amazon.com/rds/) instance for your database, which is a managed service for databases. The downside is that this is more complex and, if done wrong, could create security issues (or large server bills), so consult an IT person. 
