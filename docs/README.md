@@ -30,7 +30,12 @@ In addition to the documentation for each start-up option above, we also provide
 
 * **[Github index](https://github.com/CharityNavigator/irs990):** A description of how the project is built, including a description of the files involved.
 
+* **[Version history](https://990.charitynavigator.org/versions):** A list of release versions, with download links and descriptions of changes.
+
+* **[Frequently asked questions](https://990.charitynavigator.org/faq)** 
+
 * **[R tutorial](http://990.charitynavigator.org/tutorial.R)** The tutorial that appears when you follow the quick-start instructions for our **small** database.
+
 
 ## Who should use this toolkit
 
