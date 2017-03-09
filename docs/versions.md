@@ -8,7 +8,7 @@
 ### Downloads
 * Quick start
   * [Small database](https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-eb2687fd) (no raw XML)
-  * [Large database]() (contains raw XML table -- slower!)
+  * Large database (coming soon)
 * `.sql` database image
   * [Small database](https://s3.amazonaws.com/irs-990-toolkit/data/irs990_no_xml_2017_03_07.sql.tar.gz) (no raw XML)
   * [Large database](https://s3.amazonaws.com/irs-990-toolkit/data/irs990_complete_2017_03_07.sql.tar.gz) (contains raw XML table -- slower!)
