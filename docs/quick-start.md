@@ -8,9 +8,9 @@ Our code is licensed under the MIT license, which gives you permission to do any
 
 ## Instructions
 
-1. Click Follow one of the following two links: 
-   * [Small database (no raw 990s)](https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-a86991be)
-   * [Large database (can look up raw 990s)](https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-76bb4060)
+1. Click Follow one of the following two links or explore our [older versions](http://990.charitynavigator.org/versions): 
+   * [Small database (no raw 990s)](https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-eb2687fd)
+   * [Large database (can look up raw 990s -- OUT OF DATE as of 2017-03-07)](https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-76bb4060)
 1. Under "Choose an Instance Type," choose `m4.xlarge` (small database) or `m4.4xlarge` (large database) and hit continue. For higher peformance, consider `c4.2xlarge` and `c4.8xlarge` respectively. This server will incur an hourly charge until you shut it down; see Amazon's [EC2 pricing](https://aws.amazon.com/ec2/pricing/on-demand/). 
 1. Keep clicking "Next" until you get to "Step 6: Configure Security Group."
 1. Click "Add rule." Under "Type," choose "HTTP." Click "Review and Launch."
