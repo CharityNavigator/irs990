@@ -40,7 +40,7 @@ Using either the small or the large database requires the ability to use SQL dat
 1. Download and set up the database.
    1. Download the latest version of our database image by typing `aws s3 cp s3://irs-990-toolkit/data/irs990_no_xml_2017_03_07.sql.tar.gz .`
    1. The file is compressed for easier transfer. Uncompress it by typing `tar -xvf irs990_no_xml_2017_03_07.sql.tar.gz`
-   1. Load the database by typing `mysql -u root -pmypassword irs990 < irs990_no_xml_2017_03_07.sql`, where `mypassword` is the root password you created. This will take about 10 minutes.
+   1. Load the database by typing `mysql -u root -pmypassword irs990 < irs990_no_xml_20170307.sql`, where `mypassword` is the root password you created. This will take about 10 minutes.
 
 ## Exploring the dataset
 
