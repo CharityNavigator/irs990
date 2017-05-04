@@ -69,7 +69,7 @@ Several of the fields here are redundant with those in `filing`. That's because 
 
 ### Part III
 
-The 990 schem adocumentation for this is pretty sparse. All it says is "Repeating Activities Lines 4b through 4d." The one-word definitions below are also from the schema.
+The 990 schema documentation for this is pretty sparse. All it says is "Repeating Activities Lines 4b through 4d." The one-word definitions below are also from the schema.
 
 * `id` -- arbitrary, table-specific ID number.
 * `FilingId` -- foreign key of `filing` table; corresponds to `filing.id`. 
