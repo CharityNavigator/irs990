@@ -28,6 +28,7 @@ In addition to the documentation for each start-up option above, we also provide
 
 * **[Data dictionary](http://990.charitynavigator.org/explore-database):** A description of each field and table included in our database.
 
+* **[Schema change logs](http://990.charitynavigator.org/schema/index):** An index of published 990 schema versions, along with change logs published by the IRS. The change logs are extracted from schema archives published on the [IRS schema website](https://www.irs.gov/pub/irs-schema/). 
 * **[Github index](https://github.com/CharityNavigator/irs990):** A description of how the project is built, including a description of the files involved.
 
 * **[Version history](http://990.charitynavigator.org/versions):** A list of release versions, with download links and descriptions of changes.
