@@ -1,0 +1,15 @@
+# Changes logs for 'Diffs990x_2007v2.2_TO_2007v2.3'
+
+* [diff_IRS2220](diff_IRS2220.xsd.html)
+* [diff_IRS8909](diff_IRS8909.xsd.html)
+* [diff_IRS8835](diff_IRS8835.xsd.html)
+* [diff_Return990EZ](diff_Return990EZ.xsd.html)
+* [diff_IRS4466](diff_IRS4466.xsd.html)
+* [diff_Return990](diff_Return990.xsd.html)
+* [diff_IRS8858](diff_IRS8858.xsd.html)
+* [diff_Return990PF](diff_Return990PF.xsd.html)
+* [diff_IRS8886](diff_IRS8886.xsd.html)
+* [diff_IRS4797](diff_IRS4797.xsd.html)
+* [diff_IRS8896](diff_IRS8896.xsd.html)
+* [diff_IRS8594](diff_IRS8594.xsd.html)
+* [diff_efileAttachments](diff_efileAttachments.xsd.html)

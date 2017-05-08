@@ -24,6 +24,6 @@ echo "***Dumping 990 database (complete) to disk."
 mysqldump --max_allowed_packet 1073741824 -h $1 -u $2 -p$3 irs990 > irs990_complete_$4.sql
 
 #echo "***Dumping 990 database (without XML) to disk."
-#mysqldump -h $1 -u $2 -p$3 irs990 crosswalk filing header part_i part_iii part_iv part_ix part_vi part_vii_a part_viii part_x part_xii root sched_g_part_i sched_l_part_ii stem > irs990_no_xml_$4.sql
+mysqldump -h $1 -u $2 -p$3 irs990 crosswalk filing header part_i part_iii part_iv part_ix part_vi part_vii_a part_viii part_x part_xii root sched_g_part_i sched_l_part_ii stem > irs990_no_xml_$4.sql
 
 print "***Done."

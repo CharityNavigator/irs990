@@ -1,0 +1,85 @@
+<html>
+<body>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Diff - Left File: Common/efileTypes.xsd (2007v1.0) Right File: Common/efileTypes.xsd (2007v1.1)</title>
+</head>
+<center>
+<b>OLD: Common/efileTypes.xsd (2007v1.0)</b>
+<br>
+<b>NEW: Common/efileTypes.xsd (2007v1.1)</b>
+<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2" width="100%">
+<tr>
+<td bgcolor="#FFFFFF" width="50%"><b>OLD line(s): 242</b>
+<br>
+<br>
+</td><td bgcolor="#FFFFFF" width="50%"><b>NEW line(s): 243,265</b>
+<br>
+<br>&nbsp;&nbsp;&lt;!-- U.S. Amount Type  --&gt;
+<br>&nbsp;&nbsp;&lt;xsd:simpleType name=&quot;USDecimalAmountType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:annotation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:documentation&gt;Type for a U.S. amount field with dollars and cents&lt;/xsd:documentation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:annotation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction base=&quot;DecimalType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:totalDigits value=&quot;17&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:minInclusive value=&quot;-999999999999999.99&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:maxInclusive value=&quot;999999999999999.99&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;
+<br>&nbsp;&nbsp;&lt;/xsd:simpleType&gt;
+<br>
+<br>&nbsp;&nbsp;&lt;!-- U.S. Amount Type - Non-Negative --&gt;
+<br>&nbsp;&nbsp;&lt;xsd:simpleType name=&quot;USDecimalAmountNNType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:annotation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:documentation&gt;Type for a U.S. non-negative amount field with dollars and cents&lt;/xsd:documentation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:annotation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction base=&quot;DecimalNNType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:totalDigits value=&quot;17&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:maxInclusive value=&quot;999999999999999.99&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;
+<br>&nbsp;&nbsp;&lt;/xsd:simpleType&gt;
+<br>
+<br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#DFEDEE" width="50%"><b>OLD line(s): 2700</b>
+<br>
+<br>
+</td><td bgcolor="#DFEDEE" width="50%"><b>NEW line(s): 2724,2730</b>
+<br>
+<br>&nbsp;&nbsp;&lt;!-- Fuel Gallons Non-Negative Type --&gt;
+<br>&nbsp;&nbsp;&lt;xsd:simpleType name=&quot;FuelGallonsNNType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction base=&quot;IntegerNNType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:totalDigits value=&quot;9&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;
+<br>&nbsp;&nbsp;&lt;/xsd:simpleType&gt;
+<br>
+<br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" width="50%"><b>OLD line(s): 3044</b>
+<br>
+<br>
+</td><td bgcolor="#FFFFFF" width="50%"><b>NEW line(s): 3075,3085</b>
+<br>
+<br>
+<br>&nbsp;&nbsp;&lt;!-- Type for VINs --&gt;
+<br>&nbsp;&nbsp;&lt;xsd:simpleType name=&quot;VINType&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:annotation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:documentation&gt;Type for Vehicle Identification No. - 17 alphanumeric characters excluding I, O, and Q&lt;/xsd:documentation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:annotation&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:pattern value=&quot;[A-HJ-NPR-Z0-9]{17}&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:pattern value=&quot;[A-HJ-NPR-Z0-9]{19}&quot;/&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:restriction&gt;
+<br>&nbsp;&nbsp;&lt;/xsd:simpleType&gt;
+<br>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
