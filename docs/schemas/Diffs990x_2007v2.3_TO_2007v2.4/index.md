@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2007v2.3_TO_2007v2.4'
+# Change logs for 'Diffs990x_2007v2.3_TO_2007v2.4'
 
 * [diff_IRS2220](diff_IRS2220.xsd.html)
 * [diff_efileTypes](diff_efileTypes.xsd.html)

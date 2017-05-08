@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2009v1.4_TO_2010v1.0'
+# Change logs for 'Diffs990x_2009v1.4_TO_2010v1.0'
 
 * [diff_IRS8865](diff_IRS8865.xsd.html)
 * [diff_ContributionsOfMotorVehiclesBoatsAndAirplanesStatement](diff_ContributionsOfMotorVehiclesBoatsAndAirplanesStatement.xsd.html)

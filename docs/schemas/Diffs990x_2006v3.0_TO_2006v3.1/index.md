@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2006v3.0_TO_2006v3.1'
+# Change logs for 'Diffs990x_2006v3.0_TO_2006v3.1'
 
 * [diff_DomesticProductionActivitiesStatement](diff_DomesticProductionActivitiesStatement.xsd.html)
 * [diff_IRS8864](diff_IRS8864.xsd.html)

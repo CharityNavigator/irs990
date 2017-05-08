@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2007v2.12_TO_2007v2.13'
+# Change logs for 'Diffs990x_2007v2.12_TO_2007v2.13'
 
 * [diff_Return990EZ](diff_Return990EZ.xsd.html)
 * [diff_ReturnData990](diff_ReturnData990.xsd.html)

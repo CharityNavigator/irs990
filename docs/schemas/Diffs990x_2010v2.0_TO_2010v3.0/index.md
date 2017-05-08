@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2010v2.0_TO_2010v3.0'
+# Change logs for 'Diffs990x_2010v2.0_TO_2010v3.0'
 
 * [new_CertifiedHistoricStructuresMidwesternAffectedSchedule](new_CertifiedHistoricStructuresMidwesternAffectedSchedule.xsd.html)
 * [diff_efileTypes](diff_efileTypes.xsd.html)

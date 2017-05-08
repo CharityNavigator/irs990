@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2008v2.0_TO_2008v2.1'
+# Change logs for 'Diffs990x_2008v2.0_TO_2008v2.1'
 
 * [new_GainEligibleSection1045RolloverStatement](new_GainEligibleSection1045RolloverStatement.xsd.html)
 * [diff_IRS990ScheduleD](diff_IRS990ScheduleD.xsd.html)

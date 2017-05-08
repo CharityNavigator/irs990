@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2015v1.0_vs_2015v2.0'
+# Change logs for 'Diffs990x_2015v1.0_vs_2015v2.0'
 
 * [diff_IRS8865](diff_IRS8865.xsd.html)
 * [new_NonAutomaticChangeRequestProceduresStatement](new_NonAutomaticChangeRequestProceduresStatement.xsd.html)

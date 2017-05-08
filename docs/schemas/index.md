@@ -2,7 +2,9 @@
 
 The IRS has issued numerous versions of the 990 schema. Some of these versions are available in zipped archives on the [IRS public schema page](https://www.irs.gov/pub/irs-schema/). These archives contain human-readable change logs in HTML format, which we have republished here for your convenience.
 
-## Versions* [Diffs990x_2005v2.4_TO_2005v3.0.20061108](Diffs990x_2005v2.4_TO_2005v3.0.20061108/index)
+## Versions
+
+* [Diffs990x_2005v2.4_TO_2005v3.0.20061108](Diffs990x_2005v2.4_TO_2005v3.0.20061108/index)
 * [Diffs990x_2005v3.0_TO_2005v3.1](Diffs990x_2005v3.0_TO_2005v3.1/index)
 * [Diffs990x_2005v3.1_TO_2005v3.2](Diffs990x_2005v3.1_TO_2005v3.2/index)
 * [Diffs990x_2005v3.2_TO_2005v3.3](Diffs990x_2005v3.2_TO_2005v3.3/index)

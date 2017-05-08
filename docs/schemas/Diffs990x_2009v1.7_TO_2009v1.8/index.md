@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2009v1.7_TO_2009v1.8'
+# Change logs for 'Diffs990x_2009v1.7_TO_2009v1.8'
 
 * [diff_efileTypes](diff_efileTypes.xsd.html)
 * [diff_Return990EZ](diff_Return990EZ.xsd.html)

@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2010v1.0_TO_2010v2.0'
+# Change logs for 'Diffs990x_2010v1.0_TO_2010v2.0'
 
 * [diff_IRS990ScheduleD](diff_IRS990ScheduleD.xsd.html)
 * [diff_IRS990ScheduleI](diff_IRS990ScheduleI.xsd.html)

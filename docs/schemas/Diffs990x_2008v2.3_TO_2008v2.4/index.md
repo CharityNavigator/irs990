@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2008v2.3_TO_2008v2.4'
+# Change logs for 'Diffs990x_2008v2.3_TO_2008v2.4'
 
 * [diff_IRS8865](diff_IRS8865.xsd.html)
 * [new_ReductionInCorporateTaxRateForQualifiedTimberGain](new_ReductionInCorporateTaxRateForQualifiedTimberGain.xsd.html)

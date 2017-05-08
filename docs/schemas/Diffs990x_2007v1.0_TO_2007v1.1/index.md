@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2007v1.0_TO_2007v1.1'
+# Change logs for 'Diffs990x_2007v1.0_TO_2007v1.1'
 
 * [new_AssignorRailroadTrackMilesStatement](new_AssignorRailroadTrackMilesStatement.xsd.html)
 * [diff_IRS8865](diff_IRS8865.xsd.html)

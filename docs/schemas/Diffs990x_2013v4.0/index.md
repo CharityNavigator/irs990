@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2013v4.0'
+# Change logs for 'Diffs990x_2013v4.0'
 
 * [diff_efileMessageIFA](diff_efileMessageIFA.xsd.html)
 * [diff_Return990EZ](diff_Return990EZ.xsd.html)

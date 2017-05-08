@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs_990x_Redesign_2008v1.0'
+# Change logs for 'Diffs_990x_Redesign_2008v1.0'
 
 * [new_IRS990ScheduleA](new_IRS990ScheduleA.xsd.html)
 * [new_IRS990ScheduleH](new_IRS990ScheduleH.xsd.html)

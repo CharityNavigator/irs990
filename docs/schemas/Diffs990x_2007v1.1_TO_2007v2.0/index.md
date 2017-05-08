@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2007v1.1_TO_2007v2.0'
+# Change logs for 'Diffs990x_2007v1.1_TO_2007v2.0'
 
 * [diff_IRS8865](diff_IRS8865.xsd.html)
 * [diff_efileTypes](diff_efileTypes.xsd.html)

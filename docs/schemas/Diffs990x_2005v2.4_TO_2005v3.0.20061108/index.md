@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2005v2.4_TO_2005v3.0.20061108'
+# Change logs for 'Diffs990x_2005v2.4_TO_2005v3.0.20061108'
 
 * [diff_CapExpensesDedAmountsSchedule](diff_CapExpensesDedAmountsSchedule.xsd.html)
 * [diff_IRS8865](diff_IRS8865.xsd.html)

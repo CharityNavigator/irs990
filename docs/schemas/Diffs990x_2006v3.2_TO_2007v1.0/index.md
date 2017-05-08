@@ -1,4 +1,4 @@
-# Changes logs for 'Diffs990x_2006v3.2_TO_2007v1.0'
+# Change logs for 'Diffs990x_2006v3.2_TO_2007v1.0'
 
 * [diff_DomesticProductionActivitiesStatement](diff_DomesticProductionActivitiesStatement.xsd.html)
 * [diff_CapExpensesDedAmountsSchedule](diff_CapExpensesDedAmountsSchedule.xsd.html)
