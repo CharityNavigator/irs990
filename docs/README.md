@@ -10,7 +10,7 @@ As a result of this hard work, Charity Navigator now has code capable of extract
 
 ## Working with the original 990 Toolkit
 
-Due to the imminent release of a much richer dataset, we have deprecated our original toolkit. If you wish to access it anyway, you can view the original documentation [here]((https://charitynavigator.github.io/irs990/original).
+Due to the imminent release of a much richer dataset, we have deprecated our original toolkit. If you wish to access it anyway, you can view the original documentation [here](https://charitynavigator.github.io/irs990/original).
 
 ## Authors (original version)
 
