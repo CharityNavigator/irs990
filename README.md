@@ -2,7 +2,7 @@
 
 Work on this repo stopped in order to shift to the [`990_long`](https://github.com/CharityNavigator/990_long) repo. In general, `990_long` is more likely to be more useful to you: it has data for every field in every version of the 990, rather than a select handful, as in this repo. On the other hand, this repo preserves the structure of the data, whereas `990_long` transforms the 990 data set into hundreds of millions of key-value pairs.
 
-# IRS 990 Toolkit
+## IRS 990 Toolkit
 
 This repository contains everything you need to get started exploring the IRS 990 dataset [hosted by Amazon Web Services on S3](https://aws.amazon.com/public-datasets/irs-990/). This includes instructions for an easier-to-use 990 database provided free to the public by [Charity Navigator](https://www.charitynavigator.org/).
 
