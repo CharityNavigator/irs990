@@ -25,6 +25,8 @@ We recommend using our [quick start](https://charitynavigator.github.io/irs990/q
 
 * **[Build from scratch](https://charitynavigator.github.io/irs990/create-database):** For advanced users who wish to modify or extend the Form 990 Decoder, we provide instructions for building the database from scratch. [[Click for more info.]](https://charitynavigator.github.io/irs990/create-database)
 
+* **[Code walkthrough](http://990.charitynavigator.org/code-walkthrough):** A run through of each of the steps involved in building this database, file-by-file.
+
 ## Additional documentation
 
 In addition to the documentation for each start-up option above, we also provide the following documentation:
