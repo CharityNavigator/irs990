@@ -21,6 +21,6 @@
 # THE SOFTWARE.
 
 echo "***Populating XML version field."
-spark-submit ./extraction/parse_version.py --hostname $1 --username $2 --password $3
+spark-submit --py-files dependencies.zip ./extraction/parse_version.py --hostname $1 --username $2 --password $3
 echo "***Populating 990 bodies."
-spark-submit ./extraction/parse_body.py --hostname $1 --username $2 --password $3
+spark-submit --py-files dependencies.zip ./extraction/parse_body.py --hostname $1 --username $2 --password $3

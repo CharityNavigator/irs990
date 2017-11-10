@@ -21,7 +21,7 @@
 # THE SOFTWARE.
 
 echo "***Loading index."
-spark-submit ./setup/load_index.py --hostname $1 --username $2 --password $3 $4
+spark-submit --py-files dependencies.zip ./python/load_index.py --hostname $1 --username $2 --password $3 $4
 echo "***Loading XML."
-spark-submit ./extraction/load_xml.py --hostname $1 --username $2 --password $3
+spark-submit --py-files dependencies.zip ./python/load_xml.py --hostname $1 --username $2 --password $3
 echo "***Done."
