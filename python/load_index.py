@@ -64,7 +64,7 @@ def lastUpdated(raw):
     return datetime.strptime(raw, "%Y-%m-%dT%H:%M:%S")
 
 sc = SparkContext()
-sc.addPyFile("pyfiles.zip")
+#sc.addPyFile("dependencies.zip")
 
 def loadIndex(years):
     session = makeSession()
