@@ -20,24 +20,11 @@
 
 import sys
 from lxml import etree
-from schema.filing import Filing, RawXML
-from schema.lookup.single import SingletonLookup
-from schema.lookup.multi import MultiLookup 
-from schema.base import Credentials
-from schema.header import Header
-from schema.i import PartI
-from schema.iii import iii
-from schema.iv import PartIV
-from schema.vi import PartVI
-from schema.vii import vii
-from schema.viii import PartVIII
-from schema.ix import PartIX
-from schema.x import PartX
-from schema.xii import PartXII
-from schema.g1 import g1
-from schema.l2 import l2
+from schema import *
+from lookup import SingletonLookup, MultiLookup 
+from cred import Credentials
 from pyspark import SparkContext
-cred = Credentials()
+cr = Credentials()
 
 sc = SparkContext()
 
@@ -54,7 +41,7 @@ def extend(elements, element):
 def makeSession():
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    engineStr = cred.getEngineStr()
+    engineStr = cr.getEngineStr()
     engine = create_engine(engineStr)
     Session = sessionmaker()
     Session.configure(bind=engine)

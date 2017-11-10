@@ -18,30 +18,37 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from schema import *
-from schema.base import Credentials, Base
+import os
+import schema
+import cred
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+import csv
 
-cred = Credentials()
-engineStr = cred.getEngineStr()
+cr = cred.Credentials()
+engineStr = cr.getEngineStr()
 engine = create_engine(engineStr)
 
-tables = ["filing",
-          "crosswalk",
-          "root",
-          "stem",
-          "part_i",
-          "part_iv",
-          "part_vi",
-          "part_vii_a",
-          "part_ix",
-          "sched_l_part_ii",
-          "part_x",
-          "header",
-          "sched_g_part_i",
-          "part_iii",
-          "part_xii",
-          "part_viii"]
+fn = "data/990_multi_stems.csv"
 
-for table in tables:
-    Base.metadata.tables[table].create(bind = engine)
+Session = sessionmaker()
+Session.configure(bind=engine)
+session = Session()
+
+with open(fn, "rb") as fh:
+    reader = csv.reader(fh)
+    reader.next()
+
+    for line in reader:
+        table, version, field, path = line 
+        c = schema.Stem()
+        c.FormType="990"
+        c.tbl=table
+        c.field=field
+        c.version=version
+        c.path=path
+
+        session.add(c)
+        session.commit()
+session.close()

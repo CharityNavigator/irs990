@@ -19,35 +19,29 @@
 # THE SOFTWARE.
 
 from schema import *
-import os
+from cred import Credentials
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-import csv
 
-cred = base.Credentials()
+cred = Credentials()
 engineStr = cred.getEngineStr()
 engine = create_engine(engineStr)
 
-fn = "data/990_multi_stems.csv"
+tables = ["filing",
+          "crosswalk",
+          "root",
+          "stem",
+          "part_i",
+          "part_iv",
+          "part_vi",
+          "part_vii_a",
+          "part_ix",
+          "sched_l_part_ii",
+          "part_x",
+          "header",
+          "sched_g_part_i",
+          "part_iii",
+          "part_xii",
+          "part_viii"]
 
-Session = sessionmaker()
-Session.configure(bind=engine)
-session = Session()
-
-with open(fn, "rb") as fh:
-    reader = csv.reader(fh)
-    reader.next()
-
-    for line in reader:
-        table, version, field, path = line 
-        c = stem.Stem()
-        c.FormType="990"
-        c.tbl=table
-        c.field=field
-        c.version=version
-        c.path=path
-
-        session.add(c)
-        session.commit()
-session.close()
+for table in tables:
+    Base.metadata.tables[table].create(bind = engine)

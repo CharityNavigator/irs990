@@ -19,6 +19,8 @@
 # THE SOFTWARE.
 
 from lxml import etree
+from schema import Crosswalk, Root, Stem
+
 class LookupBase:
     ns = "{http://www.irs.gov/efile}"
 
@@ -148,3 +150,53 @@ class LookupBase:
             return False
 
         raise Exception(etree.tostring(node))
+
+class SingletonLookup(LookupBase):
+
+    def __init__(self, session, raw):
+        LookupBase.__init__(self, session, raw)
+        
+        crosswalks = session.query(Crosswalk)\
+                    .filter(Crosswalk.FormType==self.formType)\
+                    .filter(Crosswalk.version==self.version)
+
+        self.initStems(crosswalks)
+
+class MultiLookup(LookupBase):
+
+    def __init__(self, session, raw):
+        LookupBase.__init__(self, session, raw)
+        
+        stems = session.query(Stem)\
+                    .filter(Stem.FormType==self.formType)\
+                    .filter(Stem.version==self.version)
+
+        self.initStems(stems)
+
+        roots = session.query(Root)\
+                    .filter(Root.FormType==self.formType)\
+                    .filter(Root.version==self.version)
+
+        self.initRoots(roots)
+
+    def initRoots(self, roots):
+        # A map of table name -> list of paths.
+        self.rootDict = {}
+
+        for root in roots:
+            self.loadRoot(root, self.rootDict)
+
+    def loadRoot(self, root, dct):
+        tbl   = root.tbl
+        path  = root.path
+
+        if not tbl in dct.keys():
+            dct[tbl] = []
+
+        qualified = self.qualify(path)
+        dct[tbl].append(qualified)
+
+    def getRoots(self, tbl):
+        paths = self.rootDict[tbl]
+        roots = self.getMatches(self.root, paths)
+        return roots

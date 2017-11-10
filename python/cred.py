@@ -18,23 +18,30 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from util import findTrueFalse 
-from base import Base
-from filing import Filing
-import sqlalchemy as db
-import sqlalchemy.dialects.mysql as m
-from sqlalchemy.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
+import sys
+import argparse
 
-class PartXII(Base):
-    __tablename__ = "part_xii"
+class Credentials:
 
-    id = db.Column(db.Integer, primary_key=True)
-    FilingId = db.Column(db.Integer, db.ForeignKey('filing.id'))
-    FSAudited = db.Column(db.Boolean)
-    AuditCmt = db.Column(db.Boolean)
-    filing = relationship(Filing)
+    def __init__(self, database="irs990", port=3306):
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--hostname", action="store")
+        parser.add_argument("--username", action="store")
+        parser.add_argument("--password", action="store")
+        parser.add_argument("--prod",action="store_true")
+        parser.add_argument("--database", action="store", default="irs990")
+        parser.add_argument("--port", type=int, action="store", default=3306)
 
-    def __init__(self, lookup, filing):
-        self.filing    = filing
-        self.FSAudited = lookup.findTrueFalse("part_xii", "FSAudited")
-        self.AuditCmt  = lookup.findTrueFalse("part_xii", "AuditCmt")
+        args = parser.parse_args()
+
+        self.host = args.hostname
+        self.username = args.username
+        self.password = args.password
+        self.port = args.port
+        self.database = args.database
+        self.prod = args.prod
+
+    def getEngineStr(self):
+        return "mysql://%s:%s@%s/%s" % (self.username, self.password, self.host, self.database)

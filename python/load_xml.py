@@ -18,41 +18,64 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-import sys
 from pyspark import SparkContext
-from lxml import etree
-from schema.filing import RawXML
-from schema.base import Credentials
+import boto
+from boto.s3.key import Key
+import time
+import cred 
+from schema import Filing, RawXML
+import sys
 
-cred = Credentials()
+def key_to_str(bucket, key):
+    start = time.time()
+    ret = bucket.get_key(key) \
+            .get_contents_as_string() \
+            .replace("\r", "")
+    end = time.time()
+    #print "Retrieved %s in %0.2fs." % (key,end-start)
+    return ret
+
+cr = cred.Credentials()
 
 def makeSession():
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    engineStr = cred.getEngineStr()
+    engineStr = cr.getEngineStr()
     engine = create_engine(engineStr)
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
     return session
 
-session = makeSession()
-
-def addVersions(records):
+def loadXml(filings):
     session = makeSession()
-    for row in records:
-        curId = row[0]
-        elem = session.query(RawXML).get(curId)
-        root = etree.fromstring(elem.XML)
-        elem.Version = root.attrib["returnVersion"]
-        session.add(elem)
+    s3 = boto.connect_s3(host="s3.amazonaws.com")
+    bucket = s3.get_bucket("irs-form-990")
+    for filing in filings:
+        if filing.URL == None:
+            continue
+        key_str = filing.URL.split("/")[-1]
+
+        xml_str = key_to_str(bucket, key_str)
+        e = RawXML(xml_str, filing)
+        e.FormType = filing.FormType
+
+        session.add(e)
         session.commit()
+    session.close()
+
 
 sc = SparkContext()
-records = session.query(RawXML.id, RawXML.Version)\
-        .filter(RawXML.Version == None)
+session = makeSession()
+
+filings = session.query(Filing)\
+        .filter(Filing.FormType == "990")\
+        .filter(Filing.URL != None)\
+        .filter(Filing.raw == None)
 
 session.close()
 
-sc.parallelize(records)\
-        .foreachPartition(addVersions)
+sc.parallelize(filings)\
+        .foreachPartition(loadXml)
+
+session.close()

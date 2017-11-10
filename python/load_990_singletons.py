@@ -18,21 +18,37 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+import cred
+import schema
+import os
+from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-Base = declarative_base()
-import sys
+from sqlalchemy.orm import sessionmaker
+import csv
 
-class Credentials:
+cr = cred.Credentials()
+engineStr = cr.getEngineStr()
+engine = create_engine(engineStr)
 
-    def __init__(self, database="irs990", port=3306):
-            self.host = sys.argv[1]
-            self.username = sys.argv[2]
-            self.password = sys.argv[3]
-            #if len(sys.argv) > 4:
-            #    self.key = sys.argv[4]
-            #    self.secret = sys.argv[5]
-            self.port = port 
-            self.database = database
+fn = "data/990_singletons.csv"
 
-    def getEngineStr(self):
-        return "mysql://%s:%s@%s/%s" % (self.username, self.password, self.host, self.database)
+Session = sessionmaker()
+Session.configure(bind=engine)
+session = Session()
+
+with open(fn, "rb") as fh:
+    reader = csv.reader(fh)
+    reader.next()
+
+    for line in reader:
+        table, field, version, path = line 
+        c = schema.Crosswalk()
+        c.FormType="990"
+        c.tbl=table
+        c.field=field
+        c.version=version
+        c.path=path
+
+        session.add(c)
+        session.commit()
+session.close()

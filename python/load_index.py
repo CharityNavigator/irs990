@@ -22,8 +22,8 @@ from pyspark import SparkContext
 from datetime import datetime
 import os
 import json
-from schema.base import Credentials
-from schema.filing import Filing, RawXML
+from cred import Credentials
+from schema import Filing, RawXML
 import boto
 from boto.s3.key import Key
 
@@ -64,6 +64,7 @@ def lastUpdated(raw):
     return datetime.strptime(raw, "%Y-%m-%dT%H:%M:%S")
 
 sc = SparkContext()
+sc.addPyFile("pyfiles.zip")
 
 def loadIndex(years):
     session = makeSession()
@@ -74,6 +75,10 @@ def loadIndex(years):
         index_json = key_to_str(bucket, key)
         index = json.loads(index_json)
         records = index["Filings%i" % year]
+
+        if not cred.prod:
+            records = records[1:1000]
+
         for record in records:
             f = Filing()
             f.OrganizationName = get_na(record, "OrganizationName")
