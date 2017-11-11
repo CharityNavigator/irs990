@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+PARTITIONS = 200
+
 from pyspark import SparkContext
 import boto
 from boto.s3.key import Key
@@ -73,9 +75,9 @@ filings = session.query(Filing)\
         .filter(Filing.URL != None)\
         .filter(Filing.raw == None)
 
-session.close()
-
-sc.parallelize(filings)\
+# I really thought Spark was supposed to use default parallelism
+# if I didn't specify number of partitions--weird
+sc.parallelize(filings, PARTITIONS)\
         .foreachPartition(loadXml)
 
 session.close()

@@ -33,7 +33,6 @@ class Credentials:
         parser.add_argument("--prod",action="store_true")
         parser.add_argument("--database", action="store", default="irs990")
         parser.add_argument("--port", type=int, action="store", default=3306)
-
         args = parser.parse_args()
 
         self.host = args.hostname

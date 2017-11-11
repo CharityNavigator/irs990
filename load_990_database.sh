@@ -20,8 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 # THE SOFTWARE.
 
-echo "***Loading index."
-spark-submit --py-files dependencies.zip ./python/load_index.py --hostname $1 --username $2 --password $3 $4
+#echo "***Loading index."
+#spark-submit --py-files dependencies.zip ./python/load_index.py --hostname $1 --username $2 --password $3 $4
 echo "***Loading XML."
 spark-submit --py-files dependencies.zip ./python/load_xml.py --hostname $1 --username $2 --password $3
 echo "***Done."

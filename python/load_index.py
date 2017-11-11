@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+FIRST_YEAR = 2011
+
 from pyspark import SparkContext
 from datetime import datetime
 import os
@@ -66,38 +68,72 @@ def lastUpdated(raw):
 sc = SparkContext()
 #sc.addPyFile("dependencies.zip")
 
-def loadIndex(years):
+def retrieveForYear(year):
+    r = boto.connect_s3(host="s3.amazonaws.com") \
+            .get_bucket("irs-form-990") \
+            .get_key("index_%i.json" % year) \
+            .get_contents_as_string() \
+            .replace("\r", "")
+    j = json.loads(r)
+  
+    # The index comes back as a single JSON key-value pair whose value is
+    # a JSON array of length one. Inside _that_ is an array of filings.
+
+    filings = j.values()[0]
+
+    if cred.prod:
+        return filings
+    else:
+        sample = filings[0:1000]
+        return sample
+
+def loadToDB(records):
     session = makeSession()
-    s3 = boto.connect_s3(host="s3.amazonaws.com")
-    bucket = s3.get_bucket("irs-form-990")
-    for year in years:
-        key = "index_%i.json" % (year)
-        index_json = key_to_str(bucket, key)
-        index = json.loads(index_json)
-        records = index["Filings%i" % year]
 
-        if not cred.prod:
-            records = records[1:1000]
+    for record in records:
+        f = Filing()
+        f.OrganizationName = get_na(record, "OrganizationName")
+        f.ObjectId         = get_na(record, "ObjectId")
+        f.SubmittedOn      = submittedOn(get_na(record, "SubmittedOn"))
+        f.DLN              = get_na(record, "DLN")
+        f.LastUpdated      = lastUpdated(get_na(record, "LastUpdated"))
+        f.TaxPeriod        = taxPeriod(get_na(record, "TaxPeriod"))
+        f.IsElectronic     = get_na(record, "IsElectronic")
+        f.IsAvailable      = get_na(record, "IsAvailable")
+        f.FormType         = get_na(record, "FormType")
+        f.EIN              = get_na(record, "EIN")
+        f.URL              = get_na(record, "URL")
 
-        for record in records:
-            f = Filing()
-            f.OrganizationName = get_na(record, "OrganizationName")
-            f.ObjectId         = get_na(record, "ObjectId")
-            f.SubmittedOn      = submittedOn(get_na(record, "SubmittedOn"))
-            f.DLN              = get_na(record, "DLN")
-            f.LastUpdated      = lastUpdated(get_na(record, "LastUpdated"))
-            f.TaxPeriod        = taxPeriod(get_na(record, "TaxPeriod"))
-            f.IsElectronic     = get_na(record, "IsElectronic")
-            f.IsAvailable      = get_na(record, "IsAvailable")
-            f.FormType         = get_na(record, "FormType")
-            f.EIN              = get_na(record, "EIN")
-            f.URL              = get_na(record, "URL")
-
-            session.add(f)
-            session.commit()
+        session.add(f)
+        session.commit()
 
     session.close()
 
-years = range(2011, datetime.now().year)
-sc.parallelize(years)\
-        .foreachPartition(loadIndex)
+def getYears(first_year=FIRST_YEAR):
+    year = first_year
+    failed = False
+    years = []
+
+    bucket = boto.connect_s3(host="s3.amazonaws.com") \
+            .get_bucket("irs-form-990")
+
+    while not failed:
+        failed = not bucket.get_key("index_%i.json" % year)
+        if not failed:
+            years.append(year)
+        year += 1
+
+    return years
+
+
+if cred.prod:
+    partitions = 200
+else:
+    partitions = 10
+
+years = getYears()
+
+sc.parallelize(years, len(years)) \
+        .flatMap(lambda y : retrieveForYear(y)) \
+        .repartition(partitions) \
+        .foreachPartition(loadToDB)
