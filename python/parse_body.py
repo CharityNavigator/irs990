@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+PARTITIONS = 200
+
 import sys
 from lxml import etree
 from schema import *
@@ -102,5 +104,5 @@ filings = session.query(Filing)\
 
 session.close()
 
-sc.parallelize(filings)\
+sc.parallelize(filings, PARTITIONS)\
         .foreachPartition(parseFilings)

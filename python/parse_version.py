@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+PARTITIONS = 200
+
 import sys
 from pyspark import SparkContext
 from lxml import etree
@@ -54,5 +56,5 @@ records = session.query(RawXML.id, RawXML.Version)\
 
 session.close()
 
-sc.parallelize(records)\
+sc.parallelize(records, PARTITIONS)\
         .foreachPartition(addVersions)
