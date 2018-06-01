@@ -4,7 +4,9 @@ This repository contains everything you need to get started exploring the IRS Fo
 
 ## New version available!
 
-As part of the [Nonprofit Open Data Collective](https://github.com/Nonprofit-Open-Data-Collective), Charity Navigator has been proud to contribute to the [eFile Master Concordance](https://github.com/Nonprofit-Open-Data-Collective/irs-efile-master-concordance-file), which provides a standardized mapping between the many XML schemas in the primary dataset. **The concordance is still in draft.** A [validation event](https://docs.google.com/forms/d/e/1FAIpQLSeYwFO7k_HzkkHYdD9s8xFXBfuL4OrWZNmxeC6cLEA26Dk_IA/viewform) is taking place in November 2017.
+As part of the [Nonprofit Open Data Collective](https://github.com/Nonprofit-Open-Data-Collective), Charity Navigator has been proud to contribute to the [eFile Master Concordance](https://github.com/Nonprofit-Open-Data-Collective/irs-efile-master-concordance-file), which provides a standardized mapping between the many XML schemas in the primary dataset. **The concordance is still in draft.** A [validation event](https://docs.google.com/forms/d/e/1FAIpQLSeYwFO7k_HzkkHYdD9s8xFXBfuL4OrWZNmxeC6cLEA26Dk_IA/viewform) took place in November 2017.
+
+The Charity Navigator 990 Decoder and the community concordance has been the basis for several 990-related projects, including [IRSx](https://github.com/jsfenfen/990-xml-reader) and [Open990](https://www.open990.com/), as well as a body of documentation hosted by the [Nonprofit Open Data Collective](https://github.com/Nonprofit-Open-Data-Collective).
 
 As a result of this hard work, Charity Navigator now has code capable of extracting **all fields** from the **entire** IRS eFile dataset. The data will be made publcily available after the Validatathon event. If you wish to preview the data, please follow the instructions in the readme for the [new code](https://github.com/CharityNavigator/990_long).
 
@@ -14,7 +16,7 @@ Due to the imminent release of a much richer dataset, we have deprecated our ori
 
 ## Authors (original version)
 
-Code and visualizations: David Bruce Borenstein
+Code and visualizations: [David Bruce Borenstein](https://www.github.com/borenstein)
 
 Documentation: David Bruce Borenstein and Zach Weinsteiger
 
