@@ -10,6 +10,10 @@ The Charity Navigator 990 Decoder and the community concordance has been the bas
 
 As a result of this hard work, Charity Navigator now has code capable of extracting **all fields** from the **entire** IRS eFile dataset. The data will be made publcily available after the Validatathon event. If you wish to preview the data, please follow the instructions in the readme for the [new code](https://github.com/CharityNavigator/990_long).
 
+## Want to DIY?
+
+Since this library was written, more and more resources have become available for analyzing the IRS e-file dataset. If you want to build your own 990 analysis tool, the author of this library has written [a how-to article on Medium](https://medium.com/@open990/the-irs-990-e-file-dataset-getting-to-the-chocolatey-center-of-data-deliciousness-90f66097a600).
+
 ## Working with the original 990 Toolkit
 
 Due to the imminent release of a much richer dataset, we have deprecated our original toolkit. If you wish to access it anyway, you can view the original documentation [here](https://charitynavigator.github.io/irs990/original).
