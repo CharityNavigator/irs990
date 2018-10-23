@@ -1,6 +1,6 @@
 # Pre-generated content available!
 
-The output of Charity Navigator's 990 second-generation decoder is available for free download at the [Open990 Community Data page](https://www.open990.com/data/). For most users, this will be easier than running the code yoruself. 
+The output of Charity Navigator's 990 second-generation decoder is available for free download at the [Open990 Community Data page](https://www.open990.com/data/). For most users, this will be easier than running the code yourself. 
 
 Since this library was written, more and more resources have become available for analyzing the IRS e-file dataset. If you want to build your own 990 analysis tool, the author of this library has written [a how-to article on Medium](https://medium.com/@open990/the-irs-990-e-file-dataset-getting-to-the-chocolatey-center-of-data-deliciousness-90f66097a600).
 
